@@ -1,0 +1,71 @@
+<main id="main" class="mt-5">
+
+    <section id="services" class="services section-bg ">
+
+        <div class="tab-right bg-light p-2" data-aos="fade-up">
+            <div class="border-bottom border-5 border-hm">
+                <h2>Command Line Interface</h2>
+            </div>
+            <div class="py-2  content">
+
+                <div id="install" class="section-id">
+                    <h4>Cài đặt</h4>
+                    <p>PHP phải được cài đặt</p>
+                    <div class="example-code">
+                        <p class="mb-0 bg-white px-2 ">
+                            Cài đặt
+                        </p>
+                        <p class="bg-dark text-light px-3 py-2">
+                            $ wget --no-check-certificate -O '/usr/local/bin/convertio'
+                            https://api.convertio.co/convertio
+                            $ chmod +x /usr/local/bin/convertio
+                        </p>
+                    </div>
+                </div>
+
+                <div id="use" class="section-id">
+                    <h4>Sử dụng</h4>
+                    <div class="example-code">
+                        <p class="mb-0 bg-white px-2 ">
+                            Đặt Khóa API CloudConvert của bạn làm biến môi trường
+                        </p>
+                        <p class="bg-dark text-light px-3 py-2">
+                            export CONVERTIO_API_KEY=_YOUR_API_KEY_
+                        </p>
+                    </div>
+
+                    <div class="example-code">
+                        <p class="mb-0 bg-white px-2 ">
+                            Để chuyển đổi input.pdf sang jpg:
+                        </p>
+                        <p class="bg-dark text-light px-3 py-2">
+                            convertio -f jpg input.pdf
+                        </p>
+                    </div>
+
+                    <div class="example-code">
+                        <p class="mb-0 bg-white px-2 ">
+                            Chuyển đổi hàng loạt được hỗ trợ:
+                        </p>
+                        <p class="bg-dark text-light px-3 py-2">
+                            convertio -f pdf *.txt
+                            1.txt: Done! [32999 Bytes] => ./1.txt.pdf
+                            2.txt: Done! [32999 Bytes] => ./2.txt.pdf
+
+                            All Done!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-left  m-0 p-0 d-xl-flex d-none flex-column">
+            <span class="border-bottom border-hm fs-4 fw-bold mb-2">Mục lục</span>
+            <a (click)="scrollToElement('#install')" data-hr="#install"
+                class="section-select border-0 py-1 px-3 active">1. Cài đặt</a>
+            <a (click)="scrollToElement('#use')" data-hr="#use" class="section-select border-0 py-1 px-3">2. Sử dụng</a>
+        </div>
+
+    </section>
+
+</main>

@@ -1,0 +1,38 @@
+<header id="header" class="fixed-top  shadow   ">
+    <div class="container d-flex align-items-center  ">
+
+        <h1 class="logo me-auto"><a [routerLink]="['/']"><img src="./assets/img/logohm.png" width="50px" alt=""></a>
+        </h1>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link" [routerLink]="['/document/api']" routerLinkActive="active">Tài liệu </a></li>
+                <li><a class="nav-link" [routerLink]="['/document/cli']" routerLinkActive="active">CLI</a></li>
+                <li><a class="nav-link" [routerLink]="['/document/pricing']" routerLinkActive="active">Đăng ký gói</a>
+                </li>
+                <!-- <li><a class="nav-link" href="./ocr.html">Chuyển đổi tệp tin</a></li> -->
+
+                <li *ngIf="!user" class="login-item ">
+                    <a type="button" (click)="isLogin = !isLogin">
+                        Đăng nhập
+                    </a>
+                    <div *ngIf="isLogin" class="login-item-wrap shadow">
+                        <input type="text" class="form-control mb-2 w-100" placeholder="Email">
+                        <input type="password" class="form-control mb-2 w-100" placeholder="Mật khẩu ">
+                        <div class="d-flex  align-items-center">
+                            <button class="btn btn-outline-hm">Đăng nhập</button>
+                            <img class="ms-auto" src="./assets/img/facebook-icon.png" alt="" width="40px">
+                            <img src="./assets/img/google-icon.png" alt="" width="40px">
+                        </div>
+                    </div>
+                </li>
+                <li><a class=" btn btn-outline-hm px-2 py-1 rounded me-2 ms-3 " [routerLink]="['/document/pricing']">Bắt
+                        đầu</a>
+                </li>
+
+
+            </ul>
+            <i (click)="openMoBile()" class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+</header>

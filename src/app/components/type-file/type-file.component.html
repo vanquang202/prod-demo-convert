@@ -1,0 +1,23 @@
+<div class="  p-3 overflow-hidden">
+    <div class="d-flex align-items-center justify-content-center border-bottom">
+        <input type="text" placeholder="Tìm kiếm " class="form-control select-btn">
+        <span class=""><i class="fa-solid fa-xmark fa-bounce fs-4"></i></span>
+    </div>
+    <div class="row mt-1 m-0 p-0 overflow-scroll h-100">
+        <div class="col-3 p-0  ">
+            <p class=" m-0 p-1 ps-0" role="button">Hình ảnh </p>
+            <p class=" m-0 p-1 ps-0" role="button">Tài liệu </p>
+            <p class=" m-0 p-1 ps-0" role="button">Ebook </p>
+            <p class=" m-0 p-1 ps-0" role="button">Trình bày </p>
+        </div>
+        <div class="col-9 p-0  ps-1 ">
+            <div class="row m-0 p-1">
+
+                <span *ngFor="let item of dsObj" (click)="onSelectTypeFile(item)" class="col-4 m-0 p-1">
+                    <button class="btn btn-secondary w-100"> {{ item.name }} </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</div>

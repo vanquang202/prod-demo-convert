@@ -1,0 +1,48 @@
+<p>document-pricing works!</p>
+<section style="clip-path: ellipse(97% 67% at 51% 32%);" class="h-50 text-white bg-hm  d-flex align-items-center">
+
+    <div class="  container mt-5">
+        <div class="page-title text-center">
+            <h1 class=" ">API Pricing</h1>
+        </div>
+    </div>
+
+</section>
+
+<main id="main">
+
+    <section id="services" class="services   ">
+        <div class="container" data-aos="fade-up">
+
+            <div class="w-sm-100 w-xl-50 mx-auto shadow rounded">
+
+                <div class="bg-hm text-center p-2 text-white">
+                    Gói trả trước
+                </div>
+                <div class="price bg-light text-center py-4">
+                    <h2 class="text-hm fw-bold">${{ price * ragerValue }}</h2>
+                    <span class="text-secondary">0.33 cents mỗi phút</span>
+                    <br>
+                    <input (input)="onInPut($event)" type="range" min="1" max="100" [value]="ragerValue" class="w-75">
+                </div>
+                <div class="bg-white text-center py-3">
+                    <h4>{{ minute * ragerValue }}</h4>
+                    <small>Phút chuyển đổi</small>
+                </div>
+                <div class="wrapper-type text-center bg-light">
+                    <p class="py-3 m-0 px-4 "><b>Không giới hạn*</b> kích thước tiệp</p>
+                    <p class="py-3 m-0 px-4 "><b>Không giới hạn</b> thời gian chuyển đổi tối đa cho mỗi tệp</p>
+                    <p class="py-3 m-0 px-4 "><b>Không giới hạn</b> chuyển đổi đồng thời</p>
+                    <p class="py-3 m-0 px-4 ">Ưu tiên <b>cao</b></p>
+                    <p class="py-3 m-0 px-4 ">Không gia hạn tự động </p>
+                </div>
+                <div class="bg-white py-3 text-center  ">
+                    <button class="btn btn-hm text-white fs-2 fw-bold">Đăng ký </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>

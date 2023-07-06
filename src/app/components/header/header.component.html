@@ -1,0 +1,58 @@
+<ng-container>
+    <header id="header" class="fixed-top  shadow   ">
+        <div class="container d-flex align-items-center  ">
+
+            <h1 class="logo me-auto" role="button" [routerLink]="['/']"><a><img src="assets/img/logohm.png" width="50px"
+                        alt=""></a>
+            </h1>
+
+            <nav id="navbar" class="navbar" [ngClass]="{'navbar-mobile bi-list bi-x': isMobile}">
+                <ul>
+                    <li><a class="nav-link" [routerLink]="['/ocr']" routerLinkActive="active">Nhận dạng & Bóc tách</a>
+                    </li>
+                    <li><a class="nav-link" [routerLink]="['/convert-pdf']" routerLinkActive="active">Nén
+                            PDF</a></li>
+                    <li class="dropdown"><a href="#?"><span>Chuyển đổi tệp tin</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a [routerLink]="['/convert-img']" routerLinkActive="active">Chuyển đổi
+                                    hình ảnh <i class="fa-solid fa-image"></i> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" [routerLink]="['/document']">Document</a></li>
+                    <ng-container *ngIf="!user">
+                        <li class="login-item">
+                            <a type="button" (click)="isLogin = !isLogin">
+                                Đăng nhập
+                            </a>
+                            <div *ngIf="isLogin" class="login-item-wrap shadow">
+                                <input type="text" class="form-control mb-2 w-100" placeholder="Email">
+                                <input type="password" class="form-control mb-2 w-100" placeholder="Mật khẩu ">
+                                <div class="d-flex  align-items-center">
+                                    <button class="btn btn-outline-hm">Đăng nhập</button>
+                                    <asl-google-signin-button text="continue_with" class="ms-auto"
+                                        size='large'></asl-google-signin-button>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class=" btn-outline-hm btn px-2 py-1 rounded mx-2 " [routerLink]="['/register']">Đăng
+                                ký</a>
+                        </li>
+                    </ng-container>
+                    <ng-container *ngIf="user">
+                        <li class="dropdown"><a href="#?"><span>Hi <span class="text-hm fw-bold">{{ user.name }}</span>
+                                </span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li role="button" (click)="logOut()"><a> Logout </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ng-container>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle" (click)="openMoBile()"></i>
+            </nav>
+
+        </div>
+    </header>
+</ng-container>

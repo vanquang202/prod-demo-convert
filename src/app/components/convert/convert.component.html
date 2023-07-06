@@ -1,0 +1,128 @@
+<ng-container>
+  <div *ngIf="files.length > 0" class="  convert-container-main mb-2 w-100 shadow ">
+
+    <div class="data-wrapper" id="data-wrapper">
+
+      <ng-container *ngFor="let item of files; let i = index">
+        <div class="data d-flex-center border-bottom  p-3">
+          <div class="row m-0 p-0 w-100">
+            <div class="col-xl-4 col-12 m-0 p-0">
+              <span><i class="fa-solid fa-file p-2 shadow-sm"></i> {{item.file.name}} </span>
+            </div>
+            <div class="col-xl-4 col-6 m-0 p-0 d-flex px-2 align-items-center justify-content-around">
+              <div class="d-flex">Đến
+                <div class="dropdown-open ms-2 border border-secondary rounded px-2 py-1 dropdown-toggle" type="button">
+                  {{ item.type_file?.name ?? '...' }}
+                  <app-type-file (onSelectChange)="onSelectChange($event,i)" class="dropdown-type-file"></app-type-file>
+                </div>
+              </div>
+              <div *ngIf="!item.type" class="d-flex align-items-center status-file justify-content-between">
+                <span class=" border-hm border rounded px-2 text-hm">Sẵn sàng </span>
+              </div>
+              <div *ngIf="item.type == 1" class="d-flex gap-2 align-items-center status-file justify-content-between">
+                <span class=" border-warning border rounded px-2 text-warning">Tải lên </span>
+                <span>{{ item.progress }}%</span>
+              </div>
+              <div *ngIf="item.type == 2" class="d-flex gap-2 align-items-center status-file justify-content-between">
+                <span class=" border-success border rounded px-2 text-success">Đã kết thúc </span>
+                <span>1 trang </span>
+                <button class="btn btn-hm">Tải về </button>
+              </div>
+            </div>
+            <div class="col-xl-4 col-6 m-0 p-0 d-flex align-items-center">
+
+              <span class="text-secondary">{{ formatBytes(item.file.size) }}</span>
+              <span (click)="removeFile(i)" class="ms-auto"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+
+
+    <div class="file-tool">
+      <div class="d-flex-center p-2  ">
+        <div class="   ">
+
+          <div class="  dropdown-toggle dropdown-open" type="button">
+            Chuyển đổi tất cả thành
+            <app-type-file (onSelectChange)="onSelectChange($event,-1)" class="dropdown-type-file"></app-type-file>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="convert-wrapper">
+      <div class="converter d-flex-center w-100 h-100 ps-2">
+        <div class="d-flex align-items-center gap-2">
+          <label for="upload-add" class="btn btn-light"><i class="fa-solid fa-plus text-hm"></i> Thêm
+            nhiều tệp
+            tin </label>
+          <p class="m-0 text-secondary p-0 title-xl">Dùng Ctrl hoặc Shift để thêm nhiều tập </p>
+        </div>
+        <div class="ms-auto d-flex">
+          <i class="p-3 bg-dark text-white fa-brands fa-dropbox fs-5"></i>
+          <i class="p-3 bg-dark text-white fa-brands fa-google-drive fs-5 border-start border-secondary"></i>
+          <button (click)="convert()" id="btn-convert" class="btn rounded-0 btn-hm">Chuyển đổi <i
+              class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div [ngClass]="{'d-none': files.length > 0}" class=" convert-container w-100  ">
+    <div class="convert-wrapper p-2">
+      <div class="converter d-flex-center w-100 h-100">
+        <div class="file-source-button">
+          <div class="bg-hm rounded shadow p-2 text-light  row m-0  ">
+            <div class="col-xl-6 col-10 p-0 m-0 d-flex-center p-2">
+              <label for="upload-add" role="button">Chọn tập tin </label>
+            </div>
+            <div
+              class="col-xl-6 col-12 ps-2 p-0 m-0 border-start d-none d-xl-flex justify-content-evenly align-items-center">
+              <label for="upload-add"><i class="fa-solid fa-file-arrow-up fs-4"></i> </label>
+
+              <i class=" fa-brands fa-dropbox fs-4"></i>
+              <i class=" fa-brands fa-google-drive fs-4"></i>
+              <input (change)="onChangeInput($event)" type="file" name="" id="upload-add" class="d-none"
+                multiple="true">
+            </div>
+            <div
+              class="col-2 m-0 d-flex align-items-center border-start justify-content-center d-xl-none position-relative">
+              <div class="dropdown">
+                <a class="  dropdown-toggle" type="button" id="dropdownMenuFileSelectMobile" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+
+                </a>
+                <ul class="dropdown-menu dropdown-menu-mobile " aria-labelledby="dropdownMenuFileSelectMobile">
+                  <li><a class="dropdown-item text-secondary " href="#">Từ Dropbox <i
+                        class=" fa-brands fa-dropbox fs-4"></i></a>
+                  </li>
+                  <li><a class="dropdown-item text-secondary " href="#">Từ Google driver <i
+                        class=" fa-brands fa-google-drive fs-4"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-secondary mt-1 fs-7"><i class="fa-solid fa-lock"></i> Thả tập tin ở đây. 100 MB
+            Kích thước
+            file
+            tối
+            đa hoặc là <a href="./dangky.html" class="text-light">Đăng ký</a></p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="preloader_drop" (click)="isActive = false" [ngClass]="{active: isActive}">
+    <i class="fa-sharp fa-solid fa-plus"></i>
+  </div>
+</ng-container>

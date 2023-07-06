@@ -1,0 +1,35 @@
+<header id="header" class="fixed-top  shadow   ">
+    <div class="container d-flex align-items-center justify-content-center ">
+        <h1 class="logo  "><a [routerLink]="['/']"><img src="assets/img/logohm.png" width="50px" alt=""></a></h1>
+    </div>
+</header>
+
+<div class="form-register">
+    <div class="form-wraper shadow-lg rounded p-5 d-flex flex-column   ">
+
+        <!-- <div class="mb-2 border border-hm rounded px-2 py-1 d-flex align-items-center justify-content-between   "
+            role="button">
+            <span class="ms-1 text-hm">Đăng ký với Facebook</span>
+            <img (click)="signInWithFB()" src="assets/img/facebook-icon.png" alt="" width="40px">
+        </div> -->
+        <div class="mb-2 border border-hm rounded px-2 py-1 d-flex align-items-center justify-content-between   "
+            role="button">
+            <span class="ms-1 text-hm">Đăng ký với Google</span>
+            <asl-google-signin-button select_account size='large'></asl-google-signin-button>
+            <!-- <img src="assets/img/google-icon.png" alt="" width="40px"> -->
+        </div>
+
+        <p class="text-center mb-2">Hoặc là</p>
+
+        <div class="form">
+            <div class="form-group mb-2">
+                <input type="text" class="border-hm form-control" placeholder="Email">
+            </div>
+            <div class="form-group mb-2">
+                <input type="password" class="border-hm form-control" placeholder="Mật khẩu">
+            </div>
+            <button class="btn btn-outline-hm w-100">Tạo tài khoản </button>
+        </div>
+
+    </div>
+</div>
