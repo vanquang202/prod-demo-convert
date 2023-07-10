@@ -17,6 +17,7 @@ export class ConvertComponent implements OnInit {
   }
 
   onSelectChange(event: any, index: number) {
+
     if (event.event == "select-type") {
       if (index == -1) {
         this.files.forEach((file: any) => {
@@ -26,6 +27,7 @@ export class ConvertComponent implements OnInit {
         this.files[index].type_file = event.data;
       }
     }
+
   }
 
   convert() {
@@ -71,10 +73,10 @@ export class ConvertComponent implements OnInit {
     this.handleDragOver(dropZone);
     this.handleDragLeave(dropZoneLoading);
     this.handleDragOverLoading(dropZoneLoading);
-    this.dropHandler(dropZoneLoading);
+    this.handleDrop(dropZoneLoading);
   }
 
-  dropHandler(dropZone: any) {
+  private handleDrop(dropZone: any) {
     dropZone?.addEventListener('drop', (evt: any) => {
       evt.preventDefault();
       for (let index = 0; index < evt.dataTransfer.files.length; index++) {
@@ -85,14 +87,14 @@ export class ConvertComponent implements OnInit {
     }, false);
   }
 
-  handleDragOverLoading(dropZone: any) {
+  private handleDragOverLoading(dropZone: any) {
     dropZone?.addEventListener('dragover', (evt: any) => {
       evt.preventDefault();
     }, false);
 
   }
 
-  handleDragOver(dropZone: any) {
+  private handleDragOver(dropZone: any) {
     dropZone?.addEventListener('dragover', (evt: any) => {
       evt.stopPropagation();
       evt.preventDefault();
@@ -101,7 +103,7 @@ export class ConvertComponent implements OnInit {
 
   }
 
-  handleDragLeave(dropZone: any) {
+  private handleDragLeave(dropZone: any) {
     dropZone?.addEventListener('dragleave', (evt: any) => {
       evt.preventDefault();
       evt.stopPropagation();

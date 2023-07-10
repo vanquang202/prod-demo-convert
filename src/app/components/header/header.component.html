@@ -6,15 +6,15 @@
                         alt=""></a>
             </h1>
 
-            <nav id="navbar" class="navbar" [ngClass]="{'navbar-mobile bi-list bi-x': isMobile}">
+            <nav id="navbar" [ngClass]="{'navbar-mobile': isMobileNavbar}" class="navbar">
                 <ul>
                     <li><a class="nav-link" [routerLink]="['/ocr']" routerLinkActive="active">Nhận dạng & Bóc tách</a>
                     </li>
                     <li><a class="nav-link" [routerLink]="['/convert-pdf']" routerLinkActive="active">Nén
                             PDF</a></li>
-                    <li class="dropdown"><a href="#?"><span>Chuyển đổi tệp tin</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
+                    <li class="dropdown"><a (click)="isMobileMenuDropDown = !isMobileMenuDropDown"><span>Chuyển đổi tệp
+                                tin</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul [ngClass]="{'d-block':  isMobileMenuDropDown}">
                             <li><a [routerLink]="['/convert-img']" routerLinkActive="active">Chuyển đổi
                                     hình ảnh <i class="fa-solid fa-image"></i> </a>
                             </li>
@@ -41,16 +41,18 @@
                         </li>
                     </ng-container>
                     <ng-container *ngIf="user">
-                        <li class="dropdown"><a href="#?"><span>Hi <span class="text-hm fw-bold">{{ user.name }}</span>
+                        <li class="dropdown"><a (click)="isMobileMenuAccount = !isMobileMenuAccount" href="#?"><span>Hi
+                                    <span class="text-hm fw-bold">{{ user.name }}</span>
                                 </span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
+                            <ul [ngClass]="{'d-block':  isMobileMenuAccount}">
                                 <li role="button" (click)="logOut()"><a> Logout </a>
                                 </li>
                             </ul>
                         </li>
                     </ng-container>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle" (click)="openMoBile()"></i>
+                <i class="bi bi-list mobile-nav-toggle" [ngClass]="{'bi-list': !isMobileNavbar,'bi-x': isMobileNavbar}"
+                    (click)="isMobileNavbar = !isMobileNavbar"></i>
             </nav>
 
         </div>

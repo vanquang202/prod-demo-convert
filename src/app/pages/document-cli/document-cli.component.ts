@@ -14,10 +14,10 @@ export class DocumentCliComponent implements OnInit {
     let sections = document.querySelectorAll('.section-id');
     let navLinks = document.querySelectorAll('.section-select');
     window.addEventListener('scroll', function () {
-      var currentSection = '';
+      let currentSection = '';
       sections.forEach(function (section: any) {
-        var sectionTop = section.offsetTop;
-        var sectionHeight = section.clientHeight;
+        let sectionTop = section.offsetTop;
+        let sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop - sectionHeight / 3) {
           currentSection = section.getAttribute('id');
         }

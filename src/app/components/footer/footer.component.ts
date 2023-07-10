@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+  isActiveBackTop: boolean = false;
   ngOnInit() {
-    window.addEventListener('scroll', this.scroll, true); //third parameter
+    window.addEventListener('scroll', this.scroll, true);
   }
 
   ngOnDestroy() {
@@ -16,9 +17,13 @@ export class FooterComponent {
 
   scroll = (event: any): void => {
     if (window.scrollY > 100) {
-      document.querySelector(".back-to-top")?.classList.add('active')
+      this.isActiveBackTop = true;
     } else {
-      document.querySelector(".back-to-top")?.classList.remove('active')
+      this.isActiveBackTop = false;
     }
   };
+
+  backTop() {
+    window.scrollTo(0, 0);
+  }
 }

@@ -20,15 +20,14 @@
                         <input type="password" class="form-control mb-2 w-100" placeholder="Mật khẩu ">
                         <div class="d-flex  align-items-center">
                             <button class="btn btn-outline-hm">Đăng nhập</button>
-                            <img class="ms-auto" src="./assets/img/facebook-icon.png" alt="" width="40px">
-                            <img src="./assets/img/google-icon.png" alt="" width="40px">
+                            <asl-google-signin-button text="continue_with" class="ms-auto"
+                                size='large'></asl-google-signin-button>
                         </div>
                     </div>
                 </li>
                 <li><a class=" btn btn-outline-hm px-2 py-1 rounded me-2 ms-3 " [routerLink]="['/document/pricing']">Bắt
                         đầu</a>
                 </li>
-
 
             </ul>
             <i (click)="openMoBile()" class="bi bi-list mobile-nav-toggle"></i>

@@ -30,6 +30,7 @@ import { DocumentPricingComponent } from './pages/document-pricing/document-pric
 import { RegisterComponent } from './pages/register/register.component';
 import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModalModule,
     NgbModule,
     NgxPageScrollCoreModule.forRoot({ duration: 1, }),

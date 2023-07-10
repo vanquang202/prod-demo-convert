@@ -11,7 +11,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   user: any = {};
   isLogin: boolean = false;
-  isMobile: boolean = false;
+  isMobileMenuDropDown: boolean = false;
+  isMobileMenuAccount: boolean = false;
+  isMobileNavbar: boolean = false;
+
   constructor(
     private socialAuthService: SocialAuthService,
     private authS: AuthService,
@@ -30,11 +33,5 @@ export class HeaderComponent implements OnInit {
     this.authS.removeItem('user');
     this.user = null;
     this.router.navigate(["/register"]);
-  }
-
-  openMoBile() {
-    document.getElementById("navbar")?.classList.toggle("navbar-mobile");
-    document.querySelector(".mobile-nav-toggle")?.classList.toggle("bi-list");
-    document.querySelector(".mobile-nav-toggle")?.classList.toggle("bi-x");
   }
 }
