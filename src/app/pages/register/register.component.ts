@@ -27,12 +27,7 @@ export class RegisterComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then((user: any) => {
-      if (user) {
-        this.router.navigate([""]);
-        this.authS.saveItem('user', user);
-      }
-    });
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   ngOnDestroy() {
