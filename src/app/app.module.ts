@@ -82,6 +82,10 @@ import { FormsModule } from '@angular/forms';
                 oneTapEnabled: false
               }
             )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(environment.FB_CLIENT_ID)
           }
         ],
         onError: (err: any) => {
