@@ -1,5 +1,5 @@
 import { SocialAuthService } from '@abacritt/angularx-social-login';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,9 +10,18 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderDocumentComponent implements OnInit {
   isLogin: boolean = false;
   user: any;
+
+  @HostListener('document:click', ['$event'])
+  clickout(event: any) {
+    if (!this.eRef.nativeElement.contains(event.target) && this.isLogin) {
+      this.isLogin = false;
+    }
+  }
+
   constructor(
     private socialAuthService: SocialAuthService,
     private authS: AuthService,
+    private eRef: ElementRef
   ) { }
 
   ngOnInit(): void {

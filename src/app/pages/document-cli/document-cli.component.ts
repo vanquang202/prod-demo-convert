@@ -25,7 +25,6 @@ export class DocumentCliComponent implements OnInit {
       navLinks.forEach(function (link) {
         link.classList.remove('active');
         if (link.getAttribute('data-hr') === '#' + currentSection) {
-          console.log(link);
           link.classList.add('active');
         }
       });

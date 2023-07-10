@@ -1,5 +1,5 @@
 import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -15,10 +15,18 @@ export class HeaderComponent implements OnInit {
   isMobileMenuAccount: boolean = false;
   isMobileNavbar: boolean = false;
 
+  @HostListener('document:click', ['$event'])
+  clickout(event: any) {
+    if (!this.eRef.nativeElement.contains(event.target) && this.isLogin) {
+      this.isLogin = false;
+    }
+  }
+
   constructor(
     private socialAuthService: SocialAuthService,
     private authS: AuthService,
-    private router: Router
+    private router: Router,
+    private eRef: ElementRef
   ) { }
 
   ngOnInit(): void {
