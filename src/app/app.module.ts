@@ -28,7 +28,7 @@ import { DocumentApiComponent } from './pages/document-api/document-api.componen
 import { DocumentCliComponent } from './pages/document-cli/document-cli.component';
 import { DocumentPricingComponent } from './pages/document-pricing/document-pricing.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 
@@ -82,10 +82,6 @@ import { FormsModule } from '@angular/forms';
                 oneTapEnabled: false
               }
             )
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider(environment.FB_CLIENT_ID)
           }
         ],
         onError: (err: any) => {
