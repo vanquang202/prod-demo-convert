@@ -20,14 +20,10 @@ export class RegisterComponent implements OnInit {
     if (!this.authS.getItem('user')) this.socialAuthService.signOut();
     this.subscription = this.socialAuthService.authState.subscribe((user: any) => {
       if (user) {
-        this.router.navigate([""]);
         this.authS.saveItem('user', user);
+        this.router.navigate([""]);
       }
     });
-  }
-
-  signInWithFB(): void {
-    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   ngOnDestroy() {
