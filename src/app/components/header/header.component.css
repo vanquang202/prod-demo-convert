@@ -17,7 +17,7 @@
         padding: 20px;
         top: 100%;
         right: 0;
-        width: 100% !important; 
+        min-width: 100% !important; 
     }
 }
 .active{

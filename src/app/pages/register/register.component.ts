@@ -16,6 +16,9 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) { }
 
+  ngAfterViewInit() {
+  }
+
   ngOnInit() {
     if (!this.authS.getItem('user')) this.socialAuthService.signOut();
     this.subscription = this.socialAuthService.authState.subscribe((user: any) => {
