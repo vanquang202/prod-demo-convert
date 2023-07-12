@@ -1,25 +1,3 @@
-.login-item{
-    position: relative;
-}
-.login-item-wrap{
-    position: absolute;
-    background-color: white;
-    padding: 20px;
-    top: 100%;
-    right: 0;
-    min-width: 25rem !important;
-    z-index: 999;
-}
-@media (max-width: 575px) {
-    .login-item-wrap{
-        position: absolute;
-        background-color: white;
-        padding: 20px;
-        top: 100%;
-        right: 0;
-        width: 100% !important; 
-    }
-}
 .active{
     color: var(--hm) !important;
 }

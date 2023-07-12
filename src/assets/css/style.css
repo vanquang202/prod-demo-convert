@@ -1184,3 +1184,25 @@
 .dropdown-open:hover > .dropdown-type-file {
     display: block;
 }
+
+.login-item{
+  position: relative;
+}
+.login-item-wrap{
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  top: 100%;
+  right: 0;
+  min-width: 25rem !important;
+  z-index: 999;
+}
+@media (max-width: 575px) {
+  .login-item-wrap{
+      position: unset;
+      background-color: white;
+      padding: 20px;
+      min-width: 100% !important; 
+      margin-bottom: 10px;
+  }
+}
