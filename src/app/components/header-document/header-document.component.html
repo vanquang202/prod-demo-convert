@@ -3,7 +3,7 @@
 
         <h1 class="logo me-auto"><a [routerLink]="['/']"><img src="./assets/img/logohm.png" width="50px" alt=""></a>
         </h1>
-        <nav id="navbar" class="navbar">
+        <nav id="navbar" [ngClass]="{'navbar-mobile': isMobileNavbar}" class="navbar">
             <ul>
                 <li><a class="nav-link" [routerLink]="['/document/api']" routerLinkActive="active">Tài liệu </a></li>
                 <li><a class="nav-link" [routerLink]="['/document/cli']" routerLinkActive="active">CLI</a></li>
@@ -30,7 +30,8 @@
                 </li>
 
             </ul>
-            <i (click)="openMoBile()" class="bi bi-list mobile-nav-toggle"></i>
+            <i [ngClass]="{'fa-bars': !isMobileNavbar,'fa-xmark text-white': isMobileNavbar}"
+                (click)="isMobileNavbar = !isMobileNavbar" class="fa-solid fa-bars mobile-nav-toggle"></i>
         </nav>
 
     </div>

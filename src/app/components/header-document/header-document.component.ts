@@ -11,6 +11,8 @@ export class HeaderDocumentComponent implements OnInit {
   isLogin: boolean = false;
   user: any;
 
+  isMobileNavbar: boolean = false;
+
   @HostListener('document:click', ['$event'])
   clickout(event: any) {
     if (!this.eRef.nativeElement.contains(event.target) && this.isLogin) {
@@ -30,11 +32,5 @@ export class HeaderDocumentComponent implements OnInit {
       this.authS.saveItem('user', user);
       this.user = user;
     });
-  }
-
-  openMoBile() {
-    document.getElementById("navbar")?.classList.toggle("navbar-mobile");
-    document.querySelector(".mobile-nav-toggle")?.classList.toggle("bi-list");
-    document.querySelector(".mobile-nav-toggle")?.classList.toggle("bi-x");
   }
 }

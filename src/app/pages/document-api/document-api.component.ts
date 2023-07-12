@@ -12,7 +12,7 @@ export class DocumentApiComponent implements OnInit {
   ngOnInit(): void {
     let sections = document.querySelectorAll('.section-id');
     let navLinks = document.querySelectorAll('.section-select');
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function (evt: any) {
       let currentSection = '';
       sections.forEach(function (section: any) {
         let sectionTop = section.offsetTop;

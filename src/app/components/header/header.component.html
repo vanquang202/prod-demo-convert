@@ -51,7 +51,8 @@
                         </li>
                     </ng-container>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle" [ngClass]="{'bi-list': !isMobileNavbar,'bi-x': isMobileNavbar}"
+                <i class="fa-solid fa-bars mobile-nav-toggle"
+                    [ngClass]="{'fa-bars': !isMobileNavbar,'fa-xmark text-white': isMobileNavbar}"
                     (click)="isMobileNavbar = !isMobileNavbar"></i>
             </nav>
 
