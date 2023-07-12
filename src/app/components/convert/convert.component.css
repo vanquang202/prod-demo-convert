@@ -1,0 +1,6 @@
+#dropdownMenuFileSelectMobile:hover + .dropdownMenuFileSelectMobileActive
+{
+    right: 0;
+    top: 100%;
+    display: block;
+}  
