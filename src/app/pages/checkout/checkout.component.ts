@@ -53,6 +53,7 @@ export class CheckoutComponent implements OnInit {
     },
     {
       id: 2,
+      IsDisable: true,
       name: "Thẻ ATM nội địa",
       icon: "fa-solid fa-credit-card"
     },
@@ -63,16 +64,19 @@ export class CheckoutComponent implements OnInit {
     },
     {
       id: 4,
+      IsDisable: true,
       name: "Paypal",
       icon: "fa-brands fa-cc-paypal"
     },
     {
       id: 5,
+      IsDisable: true,
       name: "Credit card",
       icon: "fa-solid fa-credit-card"
     },
     {
       id: 6,
+      IsDisable: true,
       name: "Momo",
       icon: "fa-solid fa-building-columns"
     },

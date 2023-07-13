@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class OrderReceivedComponent implements OnInit {
 
   objCart: any = {};
+  isDoneOrder: boolean = false;
 
   constructor(
     private authS: AuthService,
@@ -18,6 +19,9 @@ export class OrderReceivedComponent implements OnInit {
 
   ngOnInit(): void {
     if (!(this.objCart = this.authS.getItem("cart"))) this.router.navigate(["/pricing"]);
+    setTimeout(() => {
+      this.isDoneOrder = true;
+    }, 2000);
   }
 
   onClipBoard(value: string) {

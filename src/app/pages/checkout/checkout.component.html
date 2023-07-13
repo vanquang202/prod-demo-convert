@@ -92,10 +92,12 @@
                             </h3>
                             <p>Chọn phương thức thanh toán thuận tiện nhất cho bạn.</p>
                             <div class="row  m-0 p-0 ">
-                                <div *ngFor="let item of dsObjPayMent;let i = index" (click)="onSelectBank(i)"
-                                    class="col-xl-6 col-12 my-2 px-2" role="button">
-                                    <div [ngClass]="{active: item.IsSelected}"
-                                        class="bg-white border rounded p-3 d-flex align-items-center">
+                                <div *ngFor="let item of dsObjPayMent;let i = index"
+                                    (click)="item.IsDisable ?? onSelectBank(i)" class="col-xl-6 col-12 my-2 px-2"
+                                    role="button">
+                                    <div [title]="item.IsDisable ?  'Chức năng đang bảo trì': ''"
+                                        [ngClass]="{active: item.IsSelected , 'text-secondary not-allowed' : item.IsDisable}"
+                                        class="bg-white border rounded  p-3 d-flex align-items-center">
                                         <i [ngClass]="item.icon"></i>
                                         <span class="ms-2"> {{item.name}} </span>
                                     </div>
