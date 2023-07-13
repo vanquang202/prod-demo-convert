@@ -1,0 +1,17 @@
+.qr-code{
+    display: block;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+}
+.fa-clipboard:active {
+    color: var(--hm);
+}
+span{
+    transition: all .1s;
+}
+span:has(.fa-clipboard:active)
+{
+    color: var(--hm);
+    font-weight: bold;
+}

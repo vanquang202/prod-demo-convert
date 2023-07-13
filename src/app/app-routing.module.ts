@@ -16,6 +16,8 @@ import { DocumentCliComponent } from './pages/document-cli/document-cli.componen
 import { DocumentPricingComponent } from './pages/document-pricing/document-pricing.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { authGuard } from './guard/auth.guard';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderReceivedComponent } from './pages/order-received/order-received.component';
 
 const routes: Routes = [
   {
@@ -53,6 +55,14 @@ const routes: Routes = [
       {
         path: "pricing",
         component: PricingComponent
+      },
+      {
+        path: "checkout",
+        component: CheckoutComponent
+      },
+      {
+        path: "order-received/:id",
+        component: OrderReceivedComponent
       }
     ]
   },

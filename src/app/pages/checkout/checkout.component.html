@@ -1,0 +1,192 @@
+<section id="hero" class="mh-100vh  d-flex align-items-center">
+
+    <div class="container ">
+        <div class="page-title text-center">
+            <h1 class="text-hm">Hoàn tất thông tin </h1>
+            <p>
+                <span class="py-1 px-2 text-hm" (click)="step = 0" role="button">
+                    Thông tin
+                    thanh
+                    toán </span>
+                <i [ngClass]="{'text-hm': step == 1}" class=" fa-solid fa-angle-right"></i>
+                <span class="py-1 px-2  " [ngClass]="{'text-hm': step == 1}" role="button">Phương thức
+                    thanh toán </span>
+            </p>
+        </div>
+
+        <div class="row m-0 p-0">
+
+            <div class="col-xl-8 col-12 px-2 align-items-stretch d-flex  ">
+                <ng-container [ngSwitch]="step">
+                    <ng-container *ngSwitchCase="0">
+                        <div class="ct border rounded p-3 w-100 section-bg">
+                            <h3 class="text-hm fw-bold mb-0">Thôn tin thanh toán
+                            </h3>
+                            <p>Nhập thông tin thanh toán cá nhân của chủ sở hữu </p>
+                            <div class="row  m-0 p-0 bg-white border rounded p-2 ">
+                                <div class="col-xl-6 col-12 px-1 my-1 ">
+                                    <label class="form-label">
+                                        Tên
+                                        <span class="ct-validate">*</span>
+                                        <span class="text-danger" *ngIf="objError.last_name">
+                                            {{objError.last_name}}
+                                        </span>
+                                    </label>
+                                    <input [(ngModel)]="objCustomer.last_name" type="text" class="form-control"
+                                        placeholder="Tên">
+                                </div>
+                                <div class="col-xl-6 col-12 px-1 my-1">
+                                    <label class="form-label">
+                                        Họ
+                                        <span class="ct-validate">*</span>
+                                        <span class="text-danger" *ngIf="objError.first_name">
+                                            {{objError.first_name}}
+                                        </span>
+                                    </label>
+                                    <input [(ngModel)]="objCustomer.first_name" type="text" class="form-control"
+                                        placeholder="Họ">
+                                </div>
+                                <div class="col-12 px-1 my-1">
+                                    <label class="form-label">
+                                        Quốc gia
+                                    </label>
+                                    <p>Việt nam </p>
+                                </div>
+                                <div class="col-12 px-1 my-1">
+                                    <label class="form-label">
+                                        Số điện thoại
+                                        <span class="ct-validate">*</span>
+                                        <span class="text-danger" *ngIf="objError.phone">
+                                            {{objError.phone}}
+                                        </span>
+                                    </label>
+                                    <input [(ngModel)]="objCustomer.phone" type="number" class="form-control"
+                                        placeholder="Số điện thoại ">
+                                </div>
+                                <div class="col-12 px-1 my-1">
+                                    <label class="form-label">
+                                        Địa chỉ email
+                                        <span class="ct-validate">*</span>
+                                        <span class="text-danger" *ngIf="objError.email">
+                                            {{objError.email}}
+                                        </span>
+                                    </label>
+                                    <input [(ngModel)]="objCustomer.email" type="email" class="form-control"
+                                        placeholder="Địa chỉ email  ">
+                                </div>
+                                <div class="col-12 px-1 my-1">
+                                    <label class="form-label">
+                                        Thông tin bổ sung
+                                    </label>
+                                    <small> (Ghi chú đơn hàng) </small>
+                                    <textarea [(ngModel)]="objCustomer.detail" class="textarea form-control"
+                                        placeholder="Ghi chú bổ sung "></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="1">
+                        <div class=" ct border rounded p-3 w-100 section-bg">
+                            <h3 class="text-hm fw-bold mb-0">Phương thức thanh toán
+                            </h3>
+                            <p>Chọn phương thức thanh toán thuận tiện nhất cho bạn.</p>
+                            <div class="row  m-0 p-0 ">
+                                <div *ngFor="let item of dsObjPayMent;let i = index" (click)="onSelectBank(i)"
+                                    class="col-xl-6 col-12 my-2 px-2" role="button">
+                                    <div [ngClass]="{active: item.IsSelected}"
+                                        class="bg-white border rounded p-3 d-flex align-items-center">
+                                        <i [ngClass]="item.icon"></i>
+                                        <span class="ms-2"> {{item.name}} </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>No step here </ng-container>
+                </ng-container>
+            </div>
+
+            <div class="col-xl-4 col-12 px-2 align-items-stretch d-flex">
+                <div class=" rounded border p-3 w-100 section-bg">
+                    <h3 class="text-hm fw-bold mb-0">Đơn hàng của bạn</h3>
+                    <p>Thông tin đơn hàng , dịch vụ </p>
+                    <div class="wrap">
+
+                        <div class=" bg-white  border rounded px-3 py-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Dịch vụ : <span class="fs-2 fw-bold"> {{objCart.name}} </span> </p>
+                                <span class="btn btn-outline-hm">Thay đổi</span>
+                            </div>
+
+                            <div *ngFor="let item of objCart.options" class="d-flex justify-content-between">
+                                <p> {{item.name}} </p>
+                                <i [ngClass]="item.icon"></i>
+                            </div>
+
+                            <div class="">
+                                <label class="form-label">Chu kì thanh toán </label>
+                                <span class="ct-validate">*</span>
+                                <span class="text-danger" *ngIf="objError.typePayment">
+                                    {{objError.typePayment}}
+                                </span>
+                                <select [(ngModel)]="objCart.typePayment" class="form-select"
+                                    aria-label="Chu kì thanh tóan ">
+                                    <option disabled>Chu kì thanh toán </option>
+
+                                    <option *ngFor="let item of dsObjTypePayment" [value]="item.value"
+                                        [selected]="item.IsSelected"> {{
+                                        item.name}} </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class=" bg-white border border-hm px-3 py-2 my-2 ">
+
+
+                            <div class=" total mt-2">
+
+                                <p class="fw-bold ">Thống kê đơn hàng </p>
+                                <div class="d-flex justify-content-between">
+                                    <p>Dịch vụ </p>
+                                    <b class="text-hm">{{ objCart.price | number}} &#8363;</b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>VAT({{ objCart.vat }}%) </p>
+                                    <b class="text-hm">{{ avtPrice() | number}} &#8363;</b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="fw-bold fs-4">Tổng cộng </p>
+                                    <b class="text-hm"> {{ totalPrice() | number }} &#8363;</b>
+                                </div>
+
+                                <div class="ct-coupon border-top pt-2">
+                                    <p class="m-0">Bạn có mã ưu đãi
+                                        <span (click)="flagCoupon = !flagCoupon" class="text-hm" role="button">
+                                            Nhập mã ưu đãi
+                                        </span>
+                                    </p>
+                                    <div *ngIf="flagCoupon" class="border border-1 p-3">
+                                        <label class="form-label">Mã giảm giá <i class="fa-solid fa-ticket"></i></label>
+                                        <input type="text" class="form-control  " placeholder="Nhập mã giảm giá ">
+                                        <button class="btn btn-hm mt-2 text-white">Áp
+                                            dụng</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-2 p-0">
+                <button (click)="nextStep()" class="btn btn-hm w-100 text-white fw-bold">Tiếp tục
+                    <i class="ms-1 fa-solid fa-arrow-right fa-beat"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</section>

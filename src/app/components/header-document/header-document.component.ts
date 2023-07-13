@@ -10,7 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderDocumentComponent implements OnInit {
   isLogin: boolean = false;
   user: any;
-
   isMobileNavbar: boolean = false;
 
   @HostListener('document:click', ['$event'])

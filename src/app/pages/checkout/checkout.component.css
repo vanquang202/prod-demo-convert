@@ -1,0 +1,10 @@
+.form-label{
+    font-weight: bold;
+}
+.ct-validate{
+    color: red;
+} 
+.active{
+    background-color: var(--hm) !important;
+    color: white;
+} 

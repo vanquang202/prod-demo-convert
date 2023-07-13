@@ -1,0 +1,127 @@
+<section id="hero" class="mh-100vh  d-flex align-items-center">
+
+    <div class="container ">
+        <div class="page-title text-center">
+            <h1 class="text-hm">Thanh toán hóa đơn </h1>
+            <div class="d-flex align-items-center rounded-pill  p-1  justify-content-center  text-success">
+                <i class="fa-solid fa-circle-check fa-beat fs-2  me-2"> </i>
+                Đã thanh toán
+            </div>
+            <!-- <div class="d-flex align-items-center rounded-pill  p-1  justify-content-center  text-danger">
+                <i class="fa-solid fa-circle-exclamation fa-beat fs-2 me-2 "></i>
+                Chưa thanh toán
+            </div> -->
+        </div>
+        <div class="row mx-0 mt-2 p-0">
+            <div class="col-xl-8 col-12 p-0 align-items-stretch d-flex">
+                <div class="section-bg py-4 px-3 rounded border">
+                    <div class="ck bg-white border rounded p-2">
+                        <p class="fw-bold">Thông tin quý khách cần thanh toán </p>
+                        <div
+                            class="border border-bottom-0 d-flex py-1 px-2  justify-content-between align-items-center">
+                            <span>Ngân hàng </span>
+                            <span class="fw-bold">Vietcombank</span>
+                        </div>
+                        <div
+                            class="border border-bottom-0 d-flex py-1 px-2  justify-content-between align-items-center">
+                            <span>Chủ tài khoản </span>
+                            <span class="fw-bold">Bác Vượng</span>
+                        </div>
+                        <div
+                            class="border border-bottom-0 d-flex py-1 px-2  justify-content-between align-items-center">
+                            <span>Số tài khoản </span>
+                            <span class="fw-bold">0999999999999 <i (click)="onClipBoard('0999999999999')"
+                                    class="ms-2 fa-solid fa-clipboard"></i></span>
+                        </div>
+                        <div
+                            class="border border-bottom-0 d-flex py-1 px-2  justify-content-between align-items-center">
+                            <span>Số tiền </span>
+                            <span class="fw-bold">{{totalPrice() | number}} &#8363; <i (click)="onClipBoard('90.000')"
+                                    class="ms-2 fa-solid fa-clipboard"></i></span>
+                        </div>
+                        <div class="border   d-flex py-1 px-2  justify-content-between align-items-center">
+                            <span>Nội dung chuyển khỏan </span>
+                            <span class="fw-bold">BACVUONG <i (click)="onClipBoard('BACVUONG')"
+                                    class="ms-2 fa-solid fa-clipboard"></i></span>
+                        </div>
+                        <div class="alert alert-warning rounded-0 border border-top-0 ">
+                            <span>*Lưu ý: Nhập nội dung chính xác để đơn hàng kích hoạt tự động. Thời gian xử lý giao
+                                dịch
+                                trung bình từ 30-60s, Vui lòng không đóng trang khi giao dịch chưa hoàn tất </span>
+                        </div>
+                    </div>
+                    <div class="qr bg-white border rounded p-2 mt-2">
+                        <p class="fw-bold">QR code thanh toán <span class="text-hm" role="button">Tải xuống</span> </p>
+                        <img class="qr-code"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/640px-QR_code_for_mobile_English_Wikipedia.svg.png"
+                            alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-4 col-12 px-2 align-items-stretch d-flex ">
+                <div class=" rounded border p-3 w-100  section-bg">
+                    <div class="wrap">
+                        <div class=" bg-white border border-hm  px-3 py-2 my-2 ">
+                            <div class="total mt-2">
+                                <p class="fw-bold text-center border-bottom pb-2 fs-5">HÓA ĐƠN</p>
+                                <div class="d-flex justify-content-between">
+                                    <p>Mã hóa đơn</p>
+                                    <b class="text-hm"> {{objCart.Id}} </b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Dịch vụ </p>
+                                    <b class="text-hm"> {{objCart.name}} </b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Khách hàng </p>
+                                    <b class="text-hm"> {{objCart.customer.first_name }} {{ objCart.customer.last_name}}
+                                    </b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Điện thoại liên hệ </p>
+                                    <b class="text-hm"> {{objCart.customer.phone}} </b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Ngày tạo hóa đơn</p>
+                                    <b class="text-hm"> {{objCart.created_at | date : "dd/MM/YYYY"}} </b>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>Hình thức thanh toán </p>
+                                    <b class="text-hm"> {{objCart.payment.name}} </b>
+                                </div>
+                                <div class="d-flex justify-content-between ">
+                                    <p class="fw-bold fs-66">Tổng cộng </p>
+                                    <b class="text-hm"> {{totalPrice() | number}} &#8363;</b>
+                                </div>
+                                <div class="d-flex border-top py-2 justify-content-between align-items-center">
+                                    <p class="fw-bold fs-4 m-0">Trạng thái </p>
+                                    <!-- <b class="text-danger">Chưa thanh toán</b> -->
+                                    <b class="text-success">Đã thanh toán</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" bg-white border border-hm  px-3 py-2 my-2 ">
+                            <div class="total mt-2 d-flex">
+                                <span class="btn btn-hm flex-fill mx-2">In hóa đơn</span>
+                                <span class="btn btn-hm flex-fill mx-2">Tải xuống hóa đơn</span>
+                            </div>
+                        </div>
+                        <div class=" bg-white border border-hm  px-3 py-2 my-2 ">
+                            <div class="total mt-2 ">
+                                <p class="text-secondary">Các câu hỏi thường gặp ?</p>
+                                <p class="fw-bold" role="button">Hóa đơn sẽ cập nhật trong bao lâu ?</p>
+                                <p class="fw-bold" role="button">Tôi có thể thanh toán từ bất kì ngân hàng nào chứ ?</p>
+                                <p class="fw-bold" role="button">Tôi có thể hủy hóa đơn không ?</p>
+                                <p class="fw-bold" role="button">Tôi có thể theo dõi hóa đơn ở đâu ?</p>
+                                <p class="fw-bold" role="button">Tôi thanh toán bằng tiền mặt ở địa chỉ nào ?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>

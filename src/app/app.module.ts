@@ -31,6 +31,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderReceivedComponent } from './pages/order-received/order-received.component';
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { FormsModule } from '@angular/forms';
     DocumentCliComponent,
     DocumentPricingComponent,
     RegisterComponent,
+    CheckoutComponent,
+    OrderReceivedComponent,
   ],
   imports: [
     BrowserModule,

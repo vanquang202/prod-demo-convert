@@ -10,77 +10,25 @@
 
                 <div class="row m-0 p-0 m-2">
 
-                    <div class="col-lg-4 p-0 m-0 p-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="box text-center">
-                            <h3 class="m-3">Light</h3>
-                            <h4><sup>$</sup> <span class="fs-1 text-hm">9</span> <span> / tháng</span></h4>
-                            <ul class="mt-2">
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> <b>500
-                                        MB</b>
-                                    Kích thước
-                                    file
-                                    tối đa</li>
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> <b>25</b>
-                                    chuyển đổi
-                                    đồng thời
-                                </li>
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> Mức độ ưu
-                                    tiên
-                                    <b>cao</b>
-                                </li>
-                            </ul>
-                            <span class="btn btn-outline-hm rounded px-2 py-1 " role="button">Đăng ký </span>
-                        </div>
-                    </div>
+                    <div *ngFor="let item of dsObjPricing" class="col-lg-4  m-0 py-3 px-2 " data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="box text-center border pb-2  rounded">
+                            <h3 class="mb py-3 bg-hm text-white"> {{item.name}} </h3>
+                            <h4 class="py-3">
+                                <span class="fs-1 text-hm"> {{item.price | number}} </span>
+                                <sup>&#8363;</sup>
+                                <span> / tháng</span>
+                            </h4>
+                            <ul class="mt-2 section-bg py-3 px-1">
 
-                    <div class="col-lg-4 mt-4 mt-lg-0 p-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="box text-center featured">
-                            <h3 class="m-3">Basic</h3>
-                            <h4><sup>$</sup><span class="fs-1 text-hm">29</span><span> / tháng</span></h4>
-                            <ul class="mt-2">
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i>
-                                    <b>1GB</b>
-                                    Kích thước
-                                    file tối
-                                    đa
+                                <li *ngFor="let i of item.options" class="list-group-item my-4 border-0">
+                                    <i [ngClass]="i.icon" class=" me-2"></i>
+                                    <span [innerHTML]="i.name"></span>
                                 </li>
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> <b>50</b>
-                                    chuyển đổi
-                                    đồng thời
-                                </li>
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> Mức độ ưu
-                                    tiên
-                                    <b>cao</b>
-                                </li>
-                            </ul>
-                            <span class="btn btn-outline-hm rounded px-2 py-1 " role="button">Đăng ký </span>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 mt-4 mt-lg-0 p-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="box text-center">
-                            <h3 class="m-3">Unlimited</h3>
-                            <h4><sup>$</sup><span class="fs-1 text-hm">49</span><span> / tháng</span></h4>
-                            <ul class="mt-2">
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> <b>Không
-                                        giới
-                                        hạn</b>
-                                    kích
-                                    thước file tối đa
-                                </li>
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> <b>Không
-                                        giới
-                                        hạn</b>
-                                    chuyển
-                                    đổi đồng thời
-                                </li>
-                                <li class="list-group-item border-0"><i class="fa-solid fa-check text-hm"></i> Mức độ ưu
-                                    tiên
-                                    <b>cao
-                                        nhất</b>
-                                </li>
                             </ul>
-                            <span class="btn btn-outline-hm rounded px-2 py-1 " role="button">Đăng ký </span>
+                            <span (click)="registerItem(item)" class="btn btn-outline-hm rounded px-2 py-1 mb-1 fs-6"
+                                role="button">Đăng ký </span>
                         </div>
                     </div>
 
@@ -119,7 +67,7 @@
         </div>
     </section>
 
-    <section class="detail-end w-50 mx-auto">
+    <section class="detail-end w-75 mx-auto">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
