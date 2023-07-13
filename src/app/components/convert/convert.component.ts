@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class ConvertComponent implements OnInit {
   files: any = [];
   isActive: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private modalS: NgbModal) {
   }
@@ -31,13 +32,14 @@ export class ConvertComponent implements OnInit {
   }
 
   convert() {
-
+    this.isLoading = true;
     this.files.forEach((file: any) => {
       file.type = 1;
       file.progress = 0;
       let interv = setInterval(() => {
         file.progress++;
         if (file.progress == 100) {
+          this.isLoading = false;
           clearInterval(interv);
           file.type = 2;
         }
