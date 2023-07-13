@@ -19,3 +19,19 @@
         width: 75% !important;
     }
 }
+
+@keyframes type {
+    85% { opacity: 1;}
+    100% { width: 0px !important; opacity: 0; } 
+}
+
+.text-animation {
+    overflow: hidden;    
+} 
+
+.text-animation span {
+    overflow: hidden; 
+    padding-right: 0.1em;  
+    animation: type 5s  infinite ;  
+    animation-delay: calc(0.05s * var(--index));  
+}
