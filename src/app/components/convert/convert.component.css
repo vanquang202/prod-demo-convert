@@ -4,3 +4,18 @@
     top: 100%;
     display: block;
 }  
+.convert{
+    min-height: 200px;
+    width: 85%;
+}
+.ic{
+    width: 15px; height: 15px;
+}
+@media (max-width: 575px) {
+    .convert{
+        width: 100% !important;
+    }
+    .file-source-button{
+        width: 75% !important;
+    }
+}
