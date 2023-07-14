@@ -1,7 +1,7 @@
 <ng-container>
 
-  <div class=" border rounded   mx-auto convert shadow">
-    <div class="head bg-hm d-flex rounded-top align-items-center py-2">
+  <div class=" border rounded  position-relative  mx-auto convert shadow">
+    <div class="head bg-hm d-flex rounded-top shadow align-items-center py-2">
       <p class="ic rounded-circle my-1 ms-2 bg-danger"></p>
       <p class="ic rounded-circle my-1 ms-2 bg-primary"></p>
       <p class="ic rounded-circle my-1 ms-2 bg-warning"></p>
@@ -23,7 +23,7 @@
         Bảo mật
       </p>
     </div>
-    <div class="h-100 rounded-bottom d-flex align-items-center justify-content-center ">
+    <div class="h-100 content rounded-bottom d-flex align-items-center justify-content-center ">
 
       <div *ngIf="files.length > 0" class="  convert-container-main w-100 ">
 
@@ -132,6 +132,8 @@
       </div>
 
     </div>
+    <div class="ui-convert-top shadow"></div>
+    <div class="ui-convert-bottom shadow"></div>
   </div>
 
   <div id="preloader_drop" (click)="isActive = false" [ngClass]="{active: isActive}">
