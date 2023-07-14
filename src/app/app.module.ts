@@ -15,6 +15,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { AuthPageModule } from './pages/auth-page/auth-page.module';
 import { DocumentPageModule } from './pages/document-page/document-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
+import { CartPageModule } from './pages/cart-page/cart-page.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { HomePageModule } from './pages/home-page/home-page.module';
     DocumentPageModule,
     HomePageModule,
     LayoutsModule,
-    AuthPageModule
+    AuthPageModule,
+    CartPageModule
   ],
   providers: [
     {

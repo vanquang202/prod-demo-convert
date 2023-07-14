@@ -9,8 +9,6 @@ import { SecurityComponent } from './security/security.component';
 import { FormatComponent } from './format/format.component';
 import { SupportComponent } from './support/support.component';
 import { PricingComponent } from './pricing/pricing.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { OrderReceivedComponent } from './order-received/order-received.component';
 
 
 const routes: Routes = [
@@ -50,14 +48,7 @@ const routes: Routes = [
         path: "pricing",
         component: PricingComponent
       },
-      {
-        path: "checkout",
-        component: CheckoutComponent
-      },
-      {
-        path: "order-received/:id",
-        component: OrderReceivedComponent
-      }
+
     ]
   },
 ];

@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomePageRoutingModule } from './home-page-routing.module';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { ConvertImgComponent } from './convert-img/convert-img.component';
 import { ConvertPdfComponent } from './convert-pdf/convert-pdf.component';
 import { FormatComponent } from './format/format.component';
-import { OrderReceivedComponent } from './order-received/order-received.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { SecurityComponent } from './security/security.component';
 import { SupportComponent } from './support/support.component';
@@ -20,11 +18,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   declarations: [
-    CheckoutComponent,
     ConvertImgComponent,
     ConvertPdfComponent,
     FormatComponent,
-    OrderReceivedComponent,
     PricingComponent,
     SecurityComponent,
     SupportComponent,

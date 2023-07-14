@@ -4,6 +4,7 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
 import { DocumentLayoutComponent } from './document-layout/document-layout.component';
 import { ComponentsModule } from '../components/components.module';
 import { RouterModule } from '@angular/router';
+import { CartLayoutComponent } from './cart-layout/cart-layout.component';
 
 
 
@@ -11,6 +12,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     DefaultLayoutComponent,
     DocumentLayoutComponent,
+    CartLayoutComponent,
   ],
   imports: [
     CommonModule,

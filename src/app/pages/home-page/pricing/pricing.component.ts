@@ -79,6 +79,6 @@ export class PricingComponent {
 
   registerItem(item: any) {
     this.authS.saveItem("cart", item);
-    this.router.navigate(["/checkout"])
+    this.router.navigate(["/cart/checkout"])
   }
 }

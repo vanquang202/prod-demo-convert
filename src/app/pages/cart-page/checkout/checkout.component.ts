@@ -139,7 +139,7 @@ export class CheckoutComponent implements OnInit {
       this.objCart.customer = this.objCustomer;
       this.objCart.payment = this.dsObjPayMent.find((f: any) => f.IsSelected);
       this.authS.saveItem("cart", this.objCart);
-      this.router.navigate(["/order-received", this.objCart.Id]);
+      this.router.navigate(["/cart/order-received", this.objCart.Id]);
     }
   }
 

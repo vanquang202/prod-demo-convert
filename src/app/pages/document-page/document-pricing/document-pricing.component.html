@@ -1,4 +1,3 @@
-<p>document-pricing works!</p>
 <section style="clip-path: ellipse(97% 67% at 51% 32%);" class="h-50 text-white bg-hm  d-flex align-items-center">
 
     <div class="  container mt-5">
@@ -14,30 +13,28 @@
     <section id="services" class="services   ">
         <div class="container" data-aos="fade-up">
 
-            <div class="w-sm-100 w-xl-50 mx-auto shadow rounded">
+            <div class="mx-auto row">
 
-                <div class="bg-hm text-center p-2 text-white">
-                    Gói trả trước
-                </div>
-                <div class="price bg-light text-center py-4">
-                    <h2 class="text-hm fw-bold">${{ price * ragerValue }}</h2>
-                    <span class="text-secondary">0.33 cents mỗi phút</span>
-                    <br>
-                    <input (input)="onInPut($event)" type="range" min="1" max="100" [value]="ragerValue" class="w-75">
-                </div>
-                <div class="bg-white text-center py-3">
-                    <h4>{{ minute * ragerValue }}</h4>
-                    <small>Phút chuyển đổi</small>
-                </div>
-                <div class="wrapper-type text-center bg-light">
-                    <p class="py-3 m-0 px-4 "><b>Không giới hạn*</b> kích thước tiệp</p>
-                    <p class="py-3 m-0 px-4 "><b>Không giới hạn</b> thời gian chuyển đổi tối đa cho mỗi tệp</p>
-                    <p class="py-3 m-0 px-4 "><b>Không giới hạn</b> chuyển đổi đồng thời</p>
-                    <p class="py-3 m-0 px-4 ">Ưu tiên <b>cao</b></p>
-                    <p class="py-3 m-0 px-4 ">Không gia hạn tự động </p>
-                </div>
-                <div class="bg-white py-3 text-center  ">
-                    <button class="btn btn-hm text-white fs-2 fw-bold">Đăng ký </button>
+                <div *ngFor="let item of dsObjPricing" class="col-lg-4  m-0 py-3 px-2 " data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="box text-center border pb-2  rounded">
+                        <h3 class="mb py-3 bg-hm text-white"> {{item.name}} </h3>
+                        <h4 class="py-3">
+                            <span class="fs-1 text-hm"> {{item.price | number}} </span>
+                            <sup>&#8363;</sup>
+                            <span> / tháng</span>
+                        </h4>
+                        <ul class="mt-2 section-bg py-3 px-1">
+
+                            <li *ngFor="let i of item.options" class="list-group-item my-4 border-0">
+                                <i [ngClass]="i.icon" class=" me-2"></i>
+                                <span [innerHTML]="i.name"></span>
+                            </li>
+
+                        </ul>
+                        <span (click)="registerItem(item)" class="btn btn-outline-hm rounded px-2 py-1 mb-1 fs-6"
+                            role="button">Đăng ký </span>
+                    </div>
                 </div>
 
             </div>
