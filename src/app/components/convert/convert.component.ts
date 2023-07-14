@@ -9,12 +9,13 @@ export class ConvertComponent implements OnInit {
   files: any = [];
   isActive: boolean = false;
   isLoading: boolean = false;
-
+  href: string = "";
   constructor(private modalS: NgbModal) {
   }
 
   ngOnInit(): void {
     this.registerDropZone();
+    this.href = window.location.href;
   }
 
   onSelectChange(event: any, index: number) {
