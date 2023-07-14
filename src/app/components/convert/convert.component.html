@@ -100,22 +100,32 @@
 
       </div>
 
-      <div [ngClass]="{'d-none': files.length > 0}" class=" convert-container w-100  ">
-        <div class="converter d-flex-center w-100 h-100">
+      <div [ngClass]="{'d-none': files.length > 0}" class=" convert-container w-100  rounded-bottom overflow-hidden">
+        <div class="converter d-flex-center w-100 h-100 position-relative overflow-hidden">
           <div class="file-source-button">
-            <div class="bg-hm rounded shadow p-2 text-light">
-              <div class="p-2">
-                <label for="upload-add" class="w-100 h-100 d-flex-center" role="button">Chọn tập tin </label>
-                <input (change)="onChangeInput($event)" type="file" name="" id="upload-add" class="d-none"
-                  multiple="true">
+
+            <div class="position-relative" style="z-index: 2;">
+
+              <div class="bg-hm rounded shadow p-2 text-light">
+                <div class="p-2">
+                  <label for="upload-add" class="w-100 h-100 d-flex-center" role="button">Chọn tập tin </label>
+                  <input (change)="onChangeInput($event)" type="file" name="" id="upload-add" class="d-none"
+                    multiple="true">
+                </div>
               </div>
+              <p class="text-secondary mt-1 fs-7"><i class="fa-solid fa-lock"></i> Thả tập tin ở đây. 100 MB
+                Kích thước
+                file
+                tối
+                đa hoặc là <a href="./dangky.html" class="text-hm">Đăng ký</a>
+              </p>
+
             </div>
 
-            <p class="text-secondary mt-1 fs-7"><i class="fa-solid fa-lock"></i> Thả tập tin ở đây. 100 MB
-              Kích thước
-              file
-              tối
-              đa hoặc là <a href="./dangky.html" class="text-hm">Đăng ký</a></p>
+            <img style="position: absolute; right: 0; bottom: 0;width: 30%;"
+              src="https://www.fegno.com/wp-content/uploads/2022/03/web-development-company-in-kochi.gif" alt="">
+
+
           </div>
         </div>
       </div>
