@@ -5,8 +5,8 @@
       <p class="ic rounded-circle my-1 ms-2 bg-danger"></p>
       <p class="ic rounded-circle my-1 ms-2 bg-primary"></p>
       <p class="ic rounded-circle my-1 ms-2 bg-warning"></p>
-      <p class="my-0 ms-2 text-hm px-2 flex-fill  me-2 rounded-top bg-white"><i
-          class="fa-sharp fa-solid fa-rotate-right  " [ngClass]="{'fa-spin': isLoading}"></i>
+      <p class="my-0 ms-2 text-hm px-2 flex-fill  me-2 rounded-top bg-white text-truncate">
+        <i class="fa-sharp fa-solid fa-rotate-right  " [ngClass]="{'fa-spin': isLoading}"></i>
         <span class="text-animation ms-2">
           <span *ngFor="let item of href.split('') ; let i = index" [style]="'--index:'+i">{{ item
             }}</span>
@@ -107,8 +107,8 @@
 
               <div class="bg-hm rounded shadow p-2 text-light">
                 <div class="p-2">
-                  <label for="upload-add" class="w-100 h-100 d-flex-center fw-bold" role="button">CHỌN TẬP TIN
-                    <i class="fa-solid fa-file ms-2 fa-bounce"></i>
+                  <label for="upload-add" class="fa-bounce w-100 h-100 d-flex-center fw-bold" role="button">CHỌN TẬP TIN
+                    <i class="fa-solid fa-file ms-2 "></i>
                   </label>
                   <input (change)="onChangeInput($event)" type="file" name="" id="upload-add" class="d-none"
                     multiple="true">
