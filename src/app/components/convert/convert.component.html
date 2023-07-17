@@ -72,8 +72,9 @@
           <div class="d-flex-center p-2  ">
             <div class="   ">
 
-              <div class="  dropdown-toggle dropdown-open" type="button">
-                Chuyển đổi tất cả thành
+              <div class="    dropdown-open" type="button">
+                <i class="fa-solid fa-border-all"></i>
+                Chuyển đổi tất cả
                 <app-type-file (onSelectChange)="onSelectChange($event,-1)" class=""></app-type-file>
               </div>
 
@@ -81,13 +82,12 @@
           </div>
         </div>
 
-        <div class="convert-wrapper rounded-bottom overflow-hidden">
+        <div class="  rounded-bottom overflow-hidden">
           <div class="converter d-flex-center w-100 h-100 ps-2">
             <div class="d-flex align-items-center gap-2">
-              <label for="upload-add" class="btn btn-light"><i class="fa-solid fa-plus text-hm"></i> Thêm
-                nhiều tệp
-                tin </label>
-              <p class="m-0 text-secondary p-0 title-xl">Dùng Ctrl hoặc Shift để thêm nhiều tập </p>
+              <label for="upload-add" class="btn btn-outline-hm"><i class="fa-solid fa-plus  "></i> BỔ SUNG TỆP
+              </label>
+              <p class="m-0 text-secondary p-0 title-xl">Ctrl, Shift để thêm nhiều tập </p>
             </div>
             <div class="ms-auto d-flex  ">
               <button (click)="convert()" id="btn-convert" class="btn py-3 rounded-0 btn-hm">Chuyển đổi <i
@@ -103,22 +103,19 @@
         <div class="converter d-flex-center w-100 h-100 position-relative overflow-hidden">
           <div class="file-source-button">
 
-            <div class="position-relative" style="z-index: 2;">
+            <div class="position-relative " style="z-index: 2;">
 
               <div class="bg-hm rounded shadow p-2 text-light">
                 <div class="p-2">
                   <label for="upload-add" class="  w-100 h-100 d-flex-center fw-bold" role="button">CHỌN TẬP TIN
-                    <i class="fa-solid fa-file ms-2 "></i>
+
                   </label>
                   <input (change)="onChangeInput($event)" type="file" name="" id="upload-add" class="d-none"
                     multiple="true">
                 </div>
               </div>
-              <p class="text-secondary mt-1 fs-7"><i class="fa-solid fa-lock"></i> Thả tập tin ở đây. 100 MB
-                Kích thước
-                file
-                tối
-                đa hoặc là <a href="./dangky.html" class="text-hm">Đăng ký</a>
+              <p class="text-secondary mt-1 fs-7"><i class="fa-solid fa-grip-vertical me-2"></i>Tối đa 100 MB hoặc là <a
+                  href="./dangky.html" class="text-hm">Đăng ký</a> để chuyển đổi nhiều hơn
               </p>
 
             </div>
