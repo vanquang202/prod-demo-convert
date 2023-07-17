@@ -12,10 +12,12 @@
         <div class="col-9 p-0  ps-1 ">
             <div class="row m-0 p-1">
 
-                <ng-container *ngFor="let item of dsObj[keyActive].data">
+                <ng-container *ngFor="let item of dsObj[keyActive].data ; let i = index">
                     <span *ngIf="item.isActive || (item.isActive == undefined) || (content.trim() == '')"
-                        (click)="onSelectTypeFile(item)" class="col-4 m-0 p-1 ">
-                        <button class="btn btn-dark w-100 text-truncate"> {{ item.name }} </button>
+                        (click)="onSelectTypeFile(item , keyActive , i)" class="col-4 m-0 p-1 ">
+                        <button [ngClass]="{'bg-hm': item.IsSelected}" class=" btn btn-dark w-100 text-truncate">
+                            {{
+                            item.name }} </button>
                     </span>
                 </ng-container>
 

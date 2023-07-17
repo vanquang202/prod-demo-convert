@@ -42,7 +42,13 @@ export class TypeFileComponent {
   keyActive: number = 0;
   @Output() onSelectChange = new EventEmitter();
 
-  onSelectTypeFile(item: any) {
+  onSelectTypeFile(item: any, indexParent: number, indexChild: number) {
+    this.dsObj[indexParent].data.forEach((el: any, i: number) => {
+      if (i == indexChild) el.IsSelected = true;
+      else el.IsSelected = false;
+    });
+    console.log(this.dsObj);
+
     this.onSelectChange.emit({ event: "select-type", data: item });
   }
 
