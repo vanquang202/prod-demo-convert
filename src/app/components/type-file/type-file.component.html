@@ -1,4 +1,4 @@
-<div class="  p-3 overflow-hidden">
+<div class=" dropdown-type-file p-3 overflow-hidden">
     <div class="d-flex align-items-center justify-content-center border-bottom">
         <input (input)="searchData()" [(ngModel)]="content" type="text" placeholder="Tìm kiếm "
             class="form-control select-btn">
@@ -14,8 +14,8 @@
 
                 <ng-container *ngFor="let item of dsObj[keyActive].data">
                     <span *ngIf="item.isActive || (item.isActive == undefined) || (content.trim() == '')"
-                        (click)="onSelectTypeFile(item)" class="col-4 m-0 p-1">
-                        <button class="btn btn-dark w-100"> {{ item.name }} </button>
+                        (click)="onSelectTypeFile(item)" class="col-4 m-0 p-1 ">
+                        <button class="btn btn-dark w-100 text-truncate"> {{ item.name }} </button>
                     </span>
                 </ng-container>
 
@@ -23,3 +23,4 @@
         </div>
     </div>
 </div>
+<div class="dropdown-type-file-bg"></div>

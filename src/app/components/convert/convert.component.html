@@ -35,25 +35,25 @@
                 <div class="col-xl-4 col-12 m-0 p-0">
                   <span><i class="fa-solid fa-file p-2 shadow-sm"></i> {{item.file.name}} </span>
                 </div>
-                <div class="col-xl-6 col-12 m-0 p-0 d-flex px-2 align-items-center justify-content-around">
-                  <div class="d-flex">
+                <div class="col-xl-6 col-12 row m-0 p-0 d-flex px-2 align-items-center justify-content-around">
+                  <div class="d-flex col-xl-6 col-12 p-0 justify-content-center">
                     <div class="dropdown-open ms-2 border border-secondary rounded px-2 py-1 dropdown-toggle"
                       type="button">
                       {{ item.type_file?.name ?? '...' }}
-                      <app-type-file (onSelectChange)="onSelectChange($event,i)"
-                        class="dropdown-type-file"></app-type-file>
+                      <app-type-file (onSelectChange)="onSelectChange($event,i)" class=" "></app-type-file>
                     </div>
                   </div>
-                  <div *ngIf="!item.type" class="d-flex align-items-center status-file justify-content-between">
+                  <div *ngIf="!item.type"
+                    class="col-xl-6 col-12 p-0 d-flex align-items-center status-file justify-content-between">
                     <span class=" border-hm border rounded px-2 text-hm">Sẵn sàng </span>
                   </div>
                   <div *ngIf="item.type == 1"
-                    class="d-flex gap-2 align-items-center status-file justify-content-between">
+                    class=" col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between">
                     <span class=" border-warning border rounded px-2 text-warning">Tải lên </span>
                     <span>{{ item.progress }}%</span>
                   </div>
                   <div *ngIf="item.type == 2"
-                    class="d-flex gap-2 align-items-center status-file justify-content-between">
+                    class="col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between">
                     <span class=" border-success border rounded px-2 text-success">Đã kết thúc </span>
                     <span>1 trang </span>
                     <button class="btn btn-hm">Tải về </button>
@@ -74,7 +74,7 @@
 
               <div class="  dropdown-toggle dropdown-open" type="button">
                 Chuyển đổi tất cả thành
-                <app-type-file (onSelectChange)="onSelectChange($event,-1)" class="dropdown-type-file"></app-type-file>
+                <app-type-file (onSelectChange)="onSelectChange($event,-1)" class=""></app-type-file>
               </div>
 
             </div>

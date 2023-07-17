@@ -40,7 +40,6 @@ export class TypeFileComponent {
     },
   ]
   keyActive: number = 0;
-
   @Output() onSelectChange = new EventEmitter();
 
   onSelectTypeFile(item: any) {
