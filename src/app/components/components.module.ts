@@ -9,6 +9,7 @@ import { TypeFileComponent } from './type-file/type-file.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { LoadingPageComponent } from './loading-page/loading-page.component';
 
 
 
@@ -19,7 +20,8 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
     FooterComponent,
     FooterDocumentComponent,
     HeaderDocumentComponent,
-    TypeFileComponent
+    TypeFileComponent,
+    LoadingPageComponent
   ],
   exports: [
     ConvertComponent,
@@ -27,7 +29,8 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
     FooterComponent,
     FooterDocumentComponent,
     HeaderDocumentComponent,
-    TypeFileComponent
+    TypeFileComponent,
+    LoadingPageComponent
   ],
   imports: [
     CommonModule,

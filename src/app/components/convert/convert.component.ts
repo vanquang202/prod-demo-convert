@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-convert',
   templateUrl: './convert.component.html',
@@ -10,7 +11,10 @@ export class ConvertComponent implements OnInit {
   isActive: boolean = false;
   isLoading: boolean = false;
   href: string = "";
-  constructor(private modalS: NgbModal) {
+  constructor(
+    private modalS: NgbModal,
+    private authS: AuthService
+  ) {
   }
 
   ngOnInit(): void {
@@ -34,6 +38,7 @@ export class ConvertComponent implements OnInit {
 
   convert() {
     this.isLoading = true;
+    this.authS.sendEvent('loading-page', { status: true });
     this.files.forEach((file: any) => {
       file.type = 1;
       file.progress = 0;
@@ -43,6 +48,7 @@ export class ConvertComponent implements OnInit {
           this.isLoading = false;
           clearInterval(interv);
           file.type = 2;
+          this.authS.sendEvent('loading-page', { status: false });
         }
       }, 100);
     });

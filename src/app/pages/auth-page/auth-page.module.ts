@@ -5,6 +5,7 @@ import { AuthPageRoutingModule } from './auth-page-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
     CommonModule,
     AuthPageRoutingModule,
     RouterModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    ComponentsModule
   ]
 })
 export class AuthPageModule { }

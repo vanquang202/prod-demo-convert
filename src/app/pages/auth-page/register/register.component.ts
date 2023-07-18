@@ -24,7 +24,11 @@ export class RegisterComponent implements OnInit {
     this.subscription = this.socialAuthService.authState.subscribe((user: any) => {
       if (user) {
         this.authS.saveItem('user', user);
-        this.router.navigate([""]);
+        this.authS.sendEvent('loading-page', { status: true });
+        setTimeout(() => {
+          this.authS.sendEvent('loading-page', { status: false });
+          this.router.navigate([""]);
+        }, 1000);
       }
     });
   }
