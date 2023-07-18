@@ -3,7 +3,7 @@
     <div class="container ">
         <div class="page-title text-center">
             <h1 class="text-hm">Hoàn tất thông tin </h1>
-            <p>
+            <small>
                 <span class="py-1 px-2 text-hm" (click)="step = 0" role="button">
                     Thông tin
                     thanh
@@ -11,7 +11,7 @@
                 <i [ngClass]="{'text-hm': step == 1}" class=" fa-solid fa-angle-right"></i>
                 <span class="py-1 px-2  " [ngClass]="{'text-hm': step == 1}" role="button">Phương thức
                     thanh toán </span>
-            </p>
+            </small>
         </div>
 
         <div class="row m-0 p-0">
@@ -87,7 +87,7 @@
                         </div>
                     </ng-container>
                     <ng-container *ngSwitchCase="1">
-                        <div class=" ct border rounded p-3 w-100 section-bg">
+                        <div class=" ct border rounded py-3 px-2 w-100 section-bg">
                             <h3 class="text-hm fw-bold mb-0">Phương thức thanh toán
                             </h3>
                             <p>Chọn phương thức thanh toán thuận tiện nhất cho bạn.</p>
@@ -115,13 +115,14 @@
                     <p>Thông tin đơn hàng , dịch vụ </p>
                     <div class="wrap">
 
-                        <div class=" bg-white  border rounded px-3 py-2">
+                        <div class=" bg-white  border rounded p-3">
                             <div class="d-flex justify-content-between align-items-center">
                                 <p>Dịch vụ : <span class=" text-hm fw-bold"> {{objCart.name}} </span> </p>
                             </div>
 
-                            <div *ngFor="let item of objCart.options" class="d-flex justify-content-between">
-                                <p> {{item.name}} </p>
+                            <div *ngFor="let item of objCart.options"
+                                class="d-flex  my-1 rounded fw-semibol px-1 py-2 justify-content-between">
+                                <small class="m-0"> <i>{{item.name}}</i> </small>
                                 <i [ngClass]="item.icon"></i>
                             </div>
 
@@ -143,7 +144,7 @@
                             </div>
                         </div>
 
-                        <div class=" bg-white border rounded px-3 py-2 my-2 ">
+                        <div class=" bg-white border rounded px-3 py-2 mt-2">
 
 
                             <div class=" total mt-2">
@@ -162,7 +163,7 @@
                                     <b class="text-hm"> {{ totalPrice() | number }} &#8363;</b>
                                 </div>
 
-                                <div class="ct-coupon border-top pt-2">
+                                <div class="ct-coupon border-top pt-2 mb-2">
                                     <p class="m-0">Bạn có mã ưu đãi
                                         <span (click)="flagCoupon = !flagCoupon" class="text-hm" role="button">
                                             Nhập mã ưu đãi
