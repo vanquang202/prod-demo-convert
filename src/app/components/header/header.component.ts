@@ -37,9 +37,14 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  onClickRouterLink() {
+    this.isMobileNavbar = false;
+  }
+
   logOut() {
     this.authS.removeItem('user');
     this.user = null;
+
     this.router.navigate(["/register"]);
   }
 }

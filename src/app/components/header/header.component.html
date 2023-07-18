@@ -8,20 +8,23 @@
 
             <nav id="navbar" [ngClass]="{'navbar-mobile': isMobileNavbar}" class="navbar">
                 <ul>
-                    <li><a class="nav-link" [routerLink]="['/ocr']" routerLinkActive="active">Nhận dạng & Bóc tách</a>
+                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/ocr']"
+                            routerLinkActive="active">Nhận dạng & Bóc tách</a>
                     </li>
-                    <li><a class="nav-link" [routerLink]="['/convert-pdf']" routerLinkActive="active">Nén
+                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/convert-pdf']"
+                            routerLinkActive="active">Nén
                             PDF</a></li>
                     <li class="dropdown"><a (click)="isMobileMenuDropDown = !isMobileMenuDropDown"><span>Chuyển đổi tệp
                                 tin</span> <i class="bi bi-chevron-down"></i></a>
                         <ul [ngClass]="{'d-block':  isMobileMenuDropDown}">
-                            <li><a [routerLink]="['/convert-img']" routerLinkActive="active">Chuyển đổi
+                            <li><a (click)="onClickRouterLink()" [routerLink]="['/convert-img']"
+                                    routerLinkActive="active">Chuyển đổi
                                     hình ảnh <i class="fa-solid fa-image"></i> </a>
                             </li>
                         </ul>
                     </li>
-                    <li><a class="nav-link" [routerLink]="['/pricing']">Dịch vụ </a></li>
-                    <li><a class="nav-link" [routerLink]="['/document']">Document</a></li>
+                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/pricing']">Dịch vụ </a></li>
+                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/document']">Document</a></li>
                     <ng-container *ngIf="!user">
                         <li class="login-item">
                             <a type="button" (click)="isLogin = !isLogin">

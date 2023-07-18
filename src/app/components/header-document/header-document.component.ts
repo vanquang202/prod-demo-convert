@@ -32,4 +32,8 @@ export class HeaderDocumentComponent implements OnInit {
       this.user = user;
     });
   }
+
+  onClickRouterLink() {
+    this.isMobileNavbar = false;
+  }
 }

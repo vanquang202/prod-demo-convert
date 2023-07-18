@@ -5,9 +5,12 @@
         </h1>
         <nav id="navbar" [ngClass]="{'navbar-mobile': isMobileNavbar}" class="navbar">
             <ul>
-                <li><a class="nav-link" [routerLink]="['/document/api']" routerLinkActive="active">Tài liệu </a></li>
-                <li><a class="nav-link" [routerLink]="['/document/cli']" routerLinkActive="active">CLI</a></li>
-                <li><a class="nav-link" [routerLink]="['/document/pricing']" routerLinkActive="active">Đăng ký gói</a>
+                <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/document/api']"
+                        routerLinkActive="active">Tài liệu </a></li>
+                <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/document/cli']"
+                        routerLinkActive="active">CLI</a></li>
+                <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/document/pricing']"
+                        routerLinkActive="active">Đăng ký gói</a>
                 </li>
                 <!-- <li><a class="nav-link" href="./ocr.html">Chuyển đổi tệp tin</a></li> -->
 
@@ -24,7 +27,8 @@
                         </div>
                     </div>
                 </li>
-                <li><a class=" btn btn-outline-hm px-2 py-1 rounded me-2 ms-3 " [routerLink]="['/document/pricing']">Bắt
+                <li><a (click)="onClickRouterLink()" class=" btn btn-outline-hm px-2 py-1 rounded me-2 ms-3 "
+                        [routerLink]="['/document/pricing']">Bắt
                         đầu</a>
                 </li>
 
