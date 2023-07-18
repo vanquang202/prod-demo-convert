@@ -1,1 +1,13 @@
- 
+.item-prcing , h3{
+    transition: all .5s;
+}
+
+.item-prcing:hover{
+    border: unset;
+    box-shadow: 0 0 0 2px var(--hm-500), 8px 8px 0 0 var(--hm-500);
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px; */
+} 
+
+.item-prcing:hover  > h3{
+    font-weight: bold;
+} 
