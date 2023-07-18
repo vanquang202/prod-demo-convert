@@ -1249,8 +1249,9 @@ i {
     z-index: 99999;
     left: 0;
     right: 0;
-    color: white;
-    border-radius: 10px;
+    color: white; 
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
     display: none;
     min-width: 90% !important;
     bottom: 0;
