@@ -14,8 +14,7 @@ export class ConvertComponent implements OnInit {
   constructor(
     private modalS: NgbModal,
     private authS: AuthService
-  ) {
-  }
+  ) { }
 
   ngOnInit(): void {
     this.registerDropZone();
