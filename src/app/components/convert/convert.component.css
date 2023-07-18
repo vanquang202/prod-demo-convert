@@ -12,8 +12,7 @@
 } 
 .ic{
     width: 15px; height: 15px;
-}
-
+}   
 @media (max-width: 575px) {
     .convert{
         width: 100% !important;
