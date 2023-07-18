@@ -47,8 +47,6 @@ export class TypeFileComponent {
       if (i == indexChild) el.IsSelected = true;
       else el.IsSelected = false;
     });
-    console.log(this.dsObj);
-
     this.onSelectChange.emit({ event: "select-type", data: item });
   }
 
