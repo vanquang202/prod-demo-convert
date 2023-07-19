@@ -10,10 +10,12 @@
     min-height: 200px;
     width: 85%;
 } 
+
 .ic{
     width: 15px; height: 15px;
 }   
-.f-b{
+
+.bg-button-dot{
     background-image: radial-gradient(white 1px, var(--hm-500) 1.5px);
     background-size: calc(7 * 1.5px) calc(7 * 1.5px);
 }
