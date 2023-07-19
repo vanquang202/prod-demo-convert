@@ -18,35 +18,43 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: TrangChuComponent
+        component: TrangChuComponent,
+        data: { title: "Trang chủ" }
       },
       {
         path: "ocr",
-        component: OcrComponent
+        component: OcrComponent,
+        data: { title: "Nhận dạng bóc tách " }
       },
       {
         path: "convert-pdf",
-        component: ConvertPdfComponent
+        component: ConvertPdfComponent,
+        data: { title: "Nén PDF" }
       },
       {
         path: "convert-img",
-        component: ConvertImgComponent
+        component: ConvertImgComponent,
+        data: { title: "Chuyển đôi hình ảnh " }
       },
       {
         path: "security",
-        component: SecurityComponent
+        component: SecurityComponent,
+        data: { title: "Bảo mật" }
       },
       {
         path: "format",
-        component: FormatComponent
+        component: FormatComponent,
+        data: { title: "Định dạng file " }
       },
       {
         path: "support",
-        component: SupportComponent
+        component: SupportComponent,
+        data: { title: "Hỗ trợ " }
       },
       {
         path: "pricing",
-        component: PricingComponent
+        component: PricingComponent,
+        data: { title: "Dịch vụ" }
       },
 
     ]

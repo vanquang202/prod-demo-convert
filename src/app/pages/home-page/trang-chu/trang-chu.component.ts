@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-trang-chu',
   templateUrl: './trang-chu.component.html',
@@ -9,8 +8,11 @@ export class TrangChuComponent implements OnInit {
   count_file: number = 0;
   count_file_max: number = 2999999;
 
+  constructor(
+  ) { }
+
   ngOnInit(): void {
-    var interval: any = setInterval(() => {
+    let interval: any = setInterval(() => {
       if (!(this.count_file <= this.count_file_max)) {
         clearInterval(interval);
       } else {

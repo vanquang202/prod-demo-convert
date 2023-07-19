@@ -11,11 +11,13 @@ const routes: Routes = [
     children: [
       {
         path: "checkout",
-        component: CheckoutComponent
+        component: CheckoutComponent,
+        data: { title: "Thông tin thanh toán " }
       },
       {
         path: "order-received/:id",
-        component: OrderReceivedComponent
+        component: OrderReceivedComponent,
+        data: { title: "Thanh toán " }
       }
     ]
   }

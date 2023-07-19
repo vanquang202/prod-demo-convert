@@ -13,19 +13,23 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: DocumentComponent
+        component: DocumentComponent,
+        data: { title: "Tài liệu" }
       },
       {
         path: "api",
-        component: DocumentApiComponent
+        component: DocumentApiComponent,
+        data: { title: "Tài liệu api  " }
       },
       {
         path: "cli",
-        component: DocumentCliComponent
+        component: DocumentCliComponent,
+        data: { title: "Tài liệu CLI " }
       },
       {
         path: "pricing",
-        component: DocumentPricingComponent
+        component: DocumentPricingComponent,
+        data: { title: "Dịch vụ" }
       }
     ]
   },
