@@ -12,7 +12,7 @@
 } 
 
 .active{
-    animation: progress 1.3s linear infinite;
+    animation: progress .9s linear infinite;
     background-color: var(--hm);
 }
 
