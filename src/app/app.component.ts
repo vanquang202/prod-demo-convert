@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
       .subscribe((title: string) => {
         window.scrollTo(0, 0);
         if (title) {
-          this.titleService.setTitle(`ConvertWeb | ${title}`);
+          this.titleService.setTitle(`${this.title} | ${title}`);
         }
       });
   }
