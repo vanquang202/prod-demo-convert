@@ -15,9 +15,9 @@
     width: 15px; height: 15px;
 }   
 
-.bg-button-dot{
-    background-image: radial-gradient(white 1px, var(--hm-500) 1.5px);
-    background-size: calc(7 * 1.5px) calc(7 * 1.5px);
+.bg-button-line{
+    background-image: repeating-linear-gradient(45deg, black 0, white .5px, var(--hm) 0, var(--hm-500) 50%);
+    background-size: 5px 5px;
 }
 @media (max-width: 575px) {
     .convert{
