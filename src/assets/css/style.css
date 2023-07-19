@@ -1279,3 +1279,9 @@ i {
 .not-allowed {
   cursor: not-allowed;
 }
+
+
+.bg-line{
+  background-image: repeating-linear-gradient(45deg, black 0, white .5px, var(--hm) 0, var(--hm-500) 50%);
+  background-size: 5px 5px;
+}
