@@ -19,7 +19,7 @@ export class AuthService {
     return JSON.parse(item);
   }
   removeItem(key: string) {
-    localStorage.removeItem(key);
+    if (localStorage.getItem(key)) localStorage.removeItem(key);
   }
 
   // Event 
