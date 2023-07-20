@@ -16,8 +16,6 @@ export class CaptchaComponent {
 
   resolved(captchaResponse: string) {
     this._token = captchaResponse;
-    if (this._token) this.authS.saveItem("token_captcha", captchaResponse);
-    else this.authS.removeItem("token_captcha");;
   }
 
   errored(event: any) {
