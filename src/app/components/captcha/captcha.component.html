@@ -1,0 +1,6 @@
+<div *ngIf="!token" class="g-recaptcha">
+    <div class="c-recaptcha">
+        <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="_token" required
+            [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+    </div>
+</div>

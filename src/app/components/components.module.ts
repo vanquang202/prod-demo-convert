@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
-
-
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+import { CaptchaComponent } from './captcha/captcha.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { LoadingPageComponent } from './loading-page/loading-page.component';
     FooterDocumentComponent,
     HeaderDocumentComponent,
     TypeFileComponent,
-    LoadingPageComponent
+    LoadingPageComponent,
+    CaptchaComponent
   ],
   exports: [
     ConvertComponent,
@@ -30,13 +31,16 @@ import { LoadingPageComponent } from './loading-page/loading-page.component';
     FooterDocumentComponent,
     HeaderDocumentComponent,
     TypeFileComponent,
-    LoadingPageComponent
+    LoadingPageComponent,
+    CaptchaComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ]
 })
 export class ComponentsModule { }

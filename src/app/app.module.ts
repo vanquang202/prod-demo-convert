@@ -16,6 +16,7 @@ import { AuthPageModule } from './pages/auth-page/auth-page.module';
 import { DocumentPageModule } from './pages/document-page/document-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 import { CartPageModule } from './pages/cart-page/cart-page.module';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -30,12 +31,12 @@ import { CartPageModule } from './pages/cart-page/cart-page.module';
     NgxPageScrollCoreModule.forRoot({ duration: 1, }),
     SocialLoginModule,
     GoogleSigninButtonModule,
-
     DocumentPageModule,
     HomePageModule,
     LayoutsModule,
     AuthPageModule,
-    CartPageModule
+    CartPageModule,
+
   ],
   providers: [
     {
@@ -57,7 +58,13 @@ import { CartPageModule } from './pages/cart-page/cart-page.module';
           console.error(err);
         }
       } as SocialAuthServiceConfig,
-    }
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.CAPTCHA_KEY,
+      } as RecaptchaSettings,
+    },
   ],
   bootstrap: [AppComponent]
 })

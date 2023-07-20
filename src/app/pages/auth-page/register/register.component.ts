@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   subscription: any;
+  tokenCapcha: any;
+
   constructor(
     private socialAuthService: SocialAuthService,
     private authS: AuthService,
