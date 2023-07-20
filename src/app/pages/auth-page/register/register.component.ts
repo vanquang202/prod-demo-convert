@@ -10,8 +10,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  subscription: any;
-  tokenCapcha: any;
+  googleSubscription: any;
 
   constructor(
     private socialAuthService: SocialAuthService,
@@ -24,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     if (!this.authS.getItem('user')) this.socialAuthService.signOut();
-    this.subscription = this.socialAuthService.authState.subscribe((user: any) => {
+    this.googleSubscription = this.socialAuthService.authState.subscribe((user: any) => {
       if (user) {
         this.authS.saveItem('user', user);
         this.authS.sendEvent('loading-page', { status: true });
@@ -37,6 +36,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.googleSubscription.unsubscribe();
   }
 }

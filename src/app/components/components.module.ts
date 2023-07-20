@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { LoadingPageComponent } from './loading-page/loading-page.component';
-import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule, RecaptchaModule, RecaptchaV3Module } from 'ng-recaptcha';
 import { CaptchaComponent } from './captcha/captcha.component';
 
 @NgModule({
@@ -39,6 +39,7 @@ import { CaptchaComponent } from './captcha/captcha.component';
     FormsModule,
     RouterModule,
     GoogleSigninButtonModule,
+    RecaptchaV3Module,
     RecaptchaModule,
     RecaptchaFormsModule
   ]

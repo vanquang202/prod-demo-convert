@@ -13,4 +13,12 @@ export class CaptchaComponent {
     this.token = value;
     this.tokenChange.emit(this.token);
   }
+
+  resolved(captchaResponse: string) {
+    this._token = captchaResponse;
+  }
+
+  errored(event: any) {
+    this._token = null;
+  }
 }

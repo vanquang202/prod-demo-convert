@@ -1,6 +1,5 @@
-<div *ngIf="!token" class="g-recaptcha">
+<div [ngClass]="{'d-none': token}" class="g-recaptcha">
     <div class="c-recaptcha">
-        <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="_token" required
-            [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <re-captcha (resolved)="resolved($event)" (errored)="errored($event)" errorMode="handled"></re-captcha>
     </div>
 </div>
