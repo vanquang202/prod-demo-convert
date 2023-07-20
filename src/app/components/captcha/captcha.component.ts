@@ -7,8 +7,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./captcha.component.css']
 })
 export class CaptchaComponent {
+  @Input() token: any;
+  @Output() tokenChange: any = new EventEmitter;
 
-  _token: any;
+  set _token(value: any) {
+    this.token = value;
+    this.tokenChange.emit(this.token);
+  }
+
 
   constructor(
     private authS: AuthService
