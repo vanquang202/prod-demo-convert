@@ -1,5 +1,3 @@
-<div [ngClass]="{'d-none': token}" class="g-recaptcha">
-    <div class="c-recaptcha">
-        <re-captcha (resolved)="resolved($event)" (errored)="errored($event)" errorMode="handled"></re-captcha>
-    </div>
+<div style="transform:scale(0.7);transform-origin:0">
+    <re-captcha (resolved)="resolved($event)" (errored)="errored($event)" errorMode="handled"></re-captcha>
 </div>

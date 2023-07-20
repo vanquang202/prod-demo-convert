@@ -1,16 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
-import { AuthService } from 'src/app/services/auth.service';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent implements OnInit {
-
+export class LoginComponent {
   googleSubscription: any;
   token: any;
   isFirstFailed: boolean = false;

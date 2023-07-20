@@ -13,20 +13,8 @@
                         routerLinkActive="active">Đăng ký gói</a>
                 </li>
                 <!-- <li><a class="nav-link" href="./ocr.html">Chuyển đổi tệp tin</a></li> -->
-
-                <li *ngIf="!user" class="login-item ">
-                    <a type="button" (click)="isLogin = !isLogin">
-                        Đăng nhập
-                    </a>
-                    <div *ngIf="isLogin" class="login-item-wrap shadow">
-                        <input type="text" class="form-control mb-2 w-100" placeholder="Email">
-                        <input type="password" class="form-control mb-2 w-100" placeholder="Mật khẩu ">
-                        <div class="d-flex  align-items-center">
-                            <button class="btn btn-outline-hm">Đăng nhập</button>
-                            <app-captcha></app-captcha>
-                            <asl-google-signin-button class="ms-auto" size='large'></asl-google-signin-button>
-                        </div>
-                    </div>
+                <li *ngIf="!user"><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/login']">Đăng
+                        nhập</a>
                 </li>
                 <li><a (click)="onClickRouterLink()" class=" btn btn-outline-hm px-2 py-1 rounded me-2 ms-3 "
                         [routerLink]="['/document/pricing']">Bắt

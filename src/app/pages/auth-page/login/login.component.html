@@ -4,7 +4,7 @@
             <div class="text-center d-block d-xl-none mb-2">
                 <img src="assets/img/logohm.png" width="50px" alt="">
             </div>
-            <p class="text-center fw-bold fs-3 text-secondary">Đăng ký tài khoản</p>
+            <p class="text-center fw-bold fs-3 text-secondary">Đăng nhập</p>
         </div>
         <div class=" mb-2">
             <label class="form-label fw-bold">Email:</label>
@@ -24,22 +24,13 @@
                 <input type="password" class="w-100" placeholder="Mật khẩu">
             </div>
         </div>
-        <div class=" mb-2">
-            <label class="form-label fw-bold">Nhập lại mật khẩu:</label>
-            <div class="d-flex border">
-                <span class="px-2 d-flex align-items-center justify-content-center">
-                    <i class="fa-solid fa-lock text-hm"></i>
-                </span>
-                <input type="password" class="w-100" placeholder="Nhập lại mật khẩu">
-            </div>
-        </div>
         <div class="mb-2">
             <app-captcha *ngIf="isFirstFailed" [(token)]="token"></app-captcha>
             <button (click)="isFirstFailed = true" class="btn btn-hm w-100 fw-bold">Tạo tài khoản </button>
         </div>
 
         <div>
-            <p class="text-center my-2 text-secondary">- Hoặc đăng ký bằng -</p>
+            <p class="text-center my-2 text-secondary">- Đăng nhập bằng -</p>
             <div class="mb-2 rounded px-2 py-1 d-flex align-items-center justify-content-center " role="button">
                 <asl-google-signin-button type="standard" size='large'></asl-google-signin-button>
             </div>

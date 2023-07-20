@@ -8,9 +8,11 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,

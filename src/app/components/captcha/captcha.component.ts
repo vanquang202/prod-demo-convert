@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-captcha',
@@ -15,9 +14,7 @@ export class CaptchaComponent {
     this.tokenChange.emit(this.token);
   }
 
-
   constructor(
-    private authS: AuthService
   ) { }
 
   resolved(captchaResponse: string) {

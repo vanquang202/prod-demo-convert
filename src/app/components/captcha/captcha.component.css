@@ -1,17 +1,1 @@
-.g-recaptcha{
-   position: fixed;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   background-color: rgb(204, 204, 204, .5);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   z-index: 999;
-}
-.c-recaptcha{
-   padding: 20px;
-   background-color: var(--hm-500);
-   border-radius: 10px;
-} 
+ 
