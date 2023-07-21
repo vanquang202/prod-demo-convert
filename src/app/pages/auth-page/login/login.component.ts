@@ -31,7 +31,7 @@ export class LoginComponent {
         setTimeout(() => {
           this.authS.sendEvent('loading-page', { status: false });
           this.router.navigate([""]);
-        }, 1000);
+        }, 5000);
       }
     });
   }

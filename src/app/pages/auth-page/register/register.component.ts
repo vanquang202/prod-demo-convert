@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
         setTimeout(() => {
           this.authS.sendEvent('loading-page', { status: false });
           this.router.navigate([""]);
-        }, 1000);
+        }, 5000);
       }
     });
   }
