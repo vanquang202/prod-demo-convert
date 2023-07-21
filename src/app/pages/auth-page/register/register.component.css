@@ -1,13 +1,13 @@
 .content-register{
     width: 70%;
-    height: 80%;
+    min-height: 80%;
 }
  
 
 @media (max-width: 768px) {
     .content-register{
         width: 90%; 
-        height: 95%
+        min-height: 80%;
     }  
 } 
  
