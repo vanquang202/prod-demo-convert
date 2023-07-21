@@ -1,24 +1,24 @@
 <div class=" h-100  d-flex align-items-center justify-content-center ">
-    <div class="content-register shadow p-5 rounded border d-flex flex-column">
+    <div data-aos="zoom-in" class="content-register shadow p-5 rounded border d-flex flex-column">
         <div class=" mb-2">
             <div class="text-center d-block d-xl-none mb-2">
-                <img src="assets/img/logohm.png" width="50px" alt="">
+                <img role="button" [routerLink]="['/']" src="assets/img/logohm.png" width="50px" alt="">
             </div>
             <p class="text-center fw-bold fs-3 text-secondary">Đăng ký tài khoản</p>
         </div>
         <div class=" mb-2">
             <label class="form-label fw-bold">Email:</label>
-            <div class="d-flex border">
-                <span class="px-2 d-flex align-items-center justify-content-center">
+            <div class="d-flex border rounded">
+                <span class="px-3   d-flex align-items-center justify-content-center   ">
                     <i class="fa-solid fa-envelope text-hm"></i>
                 </span>
-                <input autocomplete="off" type="text" class="w-100" placeholder="Nhập email">
+                <input autocomplete="off" type="text" class="w-100 " placeholder="Nhập email">
             </div>
         </div>
         <div class=" mb-2">
             <label class="form-label fw-bold">Mật khẩu:</label>
-            <div class="d-flex border">
-                <span class="px-2 d-flex align-items-center justify-content-center">
+            <div class="d-flex border rounded">
+                <span class="px-3 d-flex align-items-center justify-content-center">
                     <i class="fa-solid fa-lock text-hm"></i>
                 </span>
                 <input type="password" class="w-100" placeholder="Mật khẩu">
@@ -26,8 +26,8 @@
         </div>
         <div class=" mb-2">
             <label class="form-label fw-bold">Nhập lại mật khẩu:</label>
-            <div class="d-flex border">
-                <span class="px-2 d-flex align-items-center justify-content-center">
+            <div class="d-flex border rounded">
+                <span class="px-3 d-flex align-items-center justify-content-center">
                     <i class="fa-solid fa-lock text-hm"></i>
                 </span>
                 <input type="password" class="w-100" placeholder="Nhập lại mật khẩu">
@@ -36,6 +36,11 @@
         <div class="mb-2">
             <app-captcha *ngIf="isFirstFailed" [(token)]="token"></app-captcha>
             <button (click)="isFirstFailed = true" class="btn btn-hm w-100 fw-bold">Tạo tài khoản </button>
+            <div class="text-center">
+                <small>
+                    Bạn đã có tài khoản ? <span class="text-hm" role="button" [routerLink]="['/login']">Đăng nhập</span>
+                </small>
+            </div>
         </div>
 
         <div>

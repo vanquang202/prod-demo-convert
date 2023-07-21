@@ -32,7 +32,8 @@
     align-items: center;
     color: var(--hm);
     left: 10px;
-    user-select: none;
+    user-select: none; 
+    z-index: 2;
 }
 .pdf{
     width: 25vh;
@@ -45,8 +46,9 @@
     justify-content: center;
     align-items: center;
     color: var(--hm);
-    left: 20%;
+    left: 17%;
     user-select: none;
+    z-index: 2;
 }
 .img{
     width: 20vh;
@@ -61,4 +63,6 @@
     color: var(--hm);
     left: 10%;
     user-select: none;
+    z-index: 2;
 }
+ 
