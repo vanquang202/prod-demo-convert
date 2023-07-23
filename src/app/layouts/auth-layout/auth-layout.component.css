@@ -78,7 +78,7 @@
     color: var(--hm);
     left: 35%;
     user-select: none;
-    z-index: 2;
+    z-index: 2; 
 } 
 
 .bg-tab{
@@ -95,4 +95,7 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+} 
+.fa-beat{
+    animation-duration: 3s !important;
 }
