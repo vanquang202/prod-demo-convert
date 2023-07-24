@@ -11,8 +11,12 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
   googleSubscription: any;
   token: any;
+
   isFirstFailed: boolean = false;
   isViewPassword: boolean = false;
+
+  obj: any = {};
+  objError: any = {};
 
   constructor(
     private socialAuthService: SocialAuthService,
@@ -35,6 +39,25 @@ export class LoginComponent {
         }, 5000);
       }
     });
+  }
+
+  validate() {
+    this.objError = {};
+    let flagValidate = true;
+    if (!this.obj.email) {
+      flagValidate = false;
+      this.objError.email = "(Chưa nhập trường này)";
+    }
+    if (!this.obj.password) {
+      flagValidate = false;
+      this.objError.password = "(Chưa nhập trường này)";
+    }
+    return flagValidate;
+  }
+
+  login() {
+    this.isFirstFailed = true;
+    if (!this.validate()) return;
   }
 
   ngOnDestroy() {

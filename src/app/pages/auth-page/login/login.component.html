@@ -10,20 +10,30 @@
             </div>
             <div class=" mb-2">
                 <label class="form-label fw-bold">Email:</label>
-                <div class="d-flex border rounded">
-                    <span class="px-3 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-envelope text-secondary"></i>
+                <span class="text-danger" *ngIf="objError.email">
+                    {{ objError.email }}
+                </span>
+                <div [ngClass]="{'border-danger': objError.email}" class="  d-flex border rounded">
+                    <span class="px-3 d-flex align-items-center justify-content-center   ">
+                        <i [ngClass]="{'text-danger': objError.email}" class="fa-solid fa-envelope text-secondary"></i>
                     </span>
-                    <input autocomplete="off" type="text" class="w-100" placeholder="Nhập email">
+                    <input [(ngModel)]="obj.email" autocomplete="off" type="text" class="w-100 "
+                        placeholder="Nhập email">
                 </div>
             </div>
             <div class=" mb-2">
-                <label class="form-label fw-bold">Mật khẩu:</label>
-                <div class="d-flex border rounded">
+                <label class="form-label fw-bold">Mật khẩu:
+                </label>
+                <span class="text-danger" *ngIf="objError.password">
+                    {{ objError.password }}
+                </span>
+                <div [ngClass]="{'border-danger': objError.password}" class="d-flex border rounded">
                     <span class="px-3 d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-lock text-secondary"></i>
+
+                        <i [ngClass]="{'text-danger': objError.password}" class="fa-solid fa-lock text-secondary"></i>
                     </span>
-                    <input [type]="isViewPassword ? 'text' : 'password'" class="w-100" placeholder="Mật khẩu">
+                    <input [(ngModel)]="obj.password" [type]=" isViewPassword ? 'text' : 'password' " class=" w-100"
+                        placeholder="Mật khẩu">
                     <span class="px-3 d-flex align-items-center justify-content-center">
                         <i *ngIf="!isViewPassword" (click)="isViewPassword = true"
                             class="fa-solid fa-eye text-secondary"></i>
@@ -34,7 +44,7 @@
             </div>
             <div class="mb-2">
                 <app-captcha *ngIf="isFirstFailed" [(token)]="token"></app-captcha>
-                <button (click)="isFirstFailed = true" class="btn btn-hm w-100 fw-bold">Đăng nhập </button>
+                <button (click)="login()" class="btn btn-hm w-100 fw-bold">Đăng nhập </button>
                 <div class="text-center">
                     <small>
                         Bạn chưa có tài khoản ? <span class="text-hm" role="button" [routerLink]="['/register']">Tạo tài

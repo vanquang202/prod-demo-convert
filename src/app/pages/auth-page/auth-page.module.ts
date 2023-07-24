@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule,
     GoogleSigninButtonModule,
     ComponentsModule,
+    FormsModule
   ]
 })
 export class AuthPageModule { }
