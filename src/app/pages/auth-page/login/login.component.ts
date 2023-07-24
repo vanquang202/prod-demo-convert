@@ -12,6 +12,7 @@ export class LoginComponent {
   googleSubscription: any;
   token: any;
   isFirstFailed: boolean = false;
+  isViewPassword: boolean = false;
 
   constructor(
     private socialAuthService: SocialAuthService,
