@@ -24,6 +24,7 @@
     background-color: var(--hm-500);
 }
 .ocr{
+  
     width: 30vh;
     height: 30vh;
     background-color: white;
@@ -37,7 +38,8 @@
     left: 20%;
     user-select: none; 
     z-index: 5;
-}
+}  
+ 
 .pdf{
     width: 25vh;
     height: 25vh;
@@ -90,9 +92,35 @@
     width: 45vh;
     height: 45vh;
     position: absolute;
-    top: 20vh;
-    left: 25vh;
+    top: 25vh;
+    right: 20vh;
+    z-index: 1;
+    box-shadow: rgba(80, 190, 200, 0.4) -5px 5px, rgba(80, 190, 200, 0.3) -10px 10px, rgba(80, 190, 200, 0.2) -15px 15px, rgba(80, 190, 200, 0.1) -20px 20px, rgba(80, 190, 200, 0.05) -25px 25px;
 }
+/* .bg-tab::before{ 
+    content: "";
+    border-radius: 31% 69% 23% 77% / 66% 18% 82% 34%;
+    background-color: var(--hm);
+    width: 43vh;
+    opacity: .4;
+    height: 43vh;
+    position: absolute; 
+    bottom: 5%;
+    right: 5%;
+    z-index: -1;
+}
+.bg-tab::after{ 
+    content: "";
+    border-radius: 31% 69% 23% 77% / 66% 18% 82% 34%;
+    background-color: var(--hm);
+    width: 43vh;
+    opacity: 1;
+    height: 43vh;
+    position: absolute; 
+    bottom: 10%;
+    right: 10%;
+    z-index: -1;
+} */
 .tab-footer{
     position: absolute;
     bottom: 10px;
@@ -108,8 +136,4 @@
 }
 .item-background{
     transition: all .2s;
-}
-.item-card:hover ~ .item-background{
-    transform: scale(1.1) !important;
-    z-index: 1;
-}
+} 
