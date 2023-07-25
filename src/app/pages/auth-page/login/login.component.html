@@ -15,7 +15,7 @@
                     {{ objError.email }}
                 </span>
                 <div [ngClass]="{'border-danger': objError.email}" class="  d-flex border rounded">
-                    <span class="px-3 d-flex align-items-center justify-content-center   ">
+                    <span class="px-2 d-flex align-items-center justify-content-center   ">
                         <i [ngClass]="{'text-danger': objError.email}" class="fa-solid fa-envelope text-secondary"></i>
                     </span>
                     <input [(ngModel)]="obj.email" autocomplete="off" type="text" class="w-100 "
@@ -29,13 +29,13 @@
                     {{ objError.password }}
                 </span>
                 <div [ngClass]="{'border-danger': objError.password}" class="d-flex border rounded">
-                    <span class="px-3 d-flex align-items-center justify-content-center">
+                    <span class="px-2 d-flex align-items-center justify-content-center">
 
                         <i [ngClass]="{'text-danger': objError.password}" class="fa-solid fa-lock text-secondary"></i>
                     </span>
                     <input [(ngModel)]="obj.password" [type]=" isViewPassword ? 'text' : 'password' " class=" w-100"
                         placeholder="Mật khẩu">
-                    <span class="px-3 d-flex align-items-center justify-content-center">
+                    <span class="px-2 d-flex align-items-center justify-content-center">
                         <i *ngIf="!isViewPassword" (click)="isViewPassword = true"
                             class="fa-solid fa-eye text-secondary"></i>
                         <i *ngIf="isViewPassword" (click)="isViewPassword = false"
