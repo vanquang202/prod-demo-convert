@@ -1,6 +1,6 @@
 <ng-container>
 
-  <div class=" border rounded  position-relative  mx-auto convert shadow">
+  <div class=" border rounded  position-relative  mx-auto convert shadow d-flex flex-column">
 
     <div class="head bg-light d-flex rounded-top h    align-items-center py-2">
       <p class="ic rounded-circle my-1 ms-2 bg-danger"></p>
@@ -25,7 +25,7 @@
       </p>
     </div>
 
-    <div class="h-100 content rounded-bottom d-flex align-items-center justify-content-center ">
+    <div class="flex-fill content rounded-bottom d-flex align-items-center justify-content-center align-items-stretch">
 
       <div *ngIf="files.length > 0" class="h-100  convert-container-main w-100 ">
 
@@ -102,7 +102,7 @@
 
       </div>
 
-      <div [ngClass]="{'d-none': files.length > 0}" class=" convert-container w-100  rounded-bottom overflow-hidden">
+      <div [ngClass]="{'d-none': files.length > 0}" class="  w-100  rounded-bottom overflow-hidden">
         <div class="converter d-flex-center w-100 h-100 position-relative overflow-hidden">
           <div class="file-source-button">
 
