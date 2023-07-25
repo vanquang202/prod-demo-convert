@@ -10,6 +10,7 @@
                 <p class="text-center fw-bold fs-3 text-secondary">Đăng ký tài khoản</p>
             </div>
             <div class=" mb-2">
+
                 <label class="form-label fw-bold">Email:</label>
                 <span class="text-danger" *ngIf="objError.email">
                     {{ objError.email }}
@@ -21,8 +22,10 @@
                     <input [(ngModel)]="obj.email" autocomplete="off" type="text" class="w-100 "
                         placeholder="Nhập email">
                 </div>
+
             </div>
             <div class=" mb-2">
+
                 <label class="form-label fw-bold">Mật khẩu:
                 </label>
                 <span class="text-danger" *ngIf="objError.password">
@@ -42,8 +45,10 @@
                             class="fa-solid fa-eye-slash text-secondary"></i>
                     </span>
                 </div>
+
             </div>
             <div class=" mb-2">
+
                 <label class="form-label fw-bold">Nhập lại mật khẩu:
                 </label>
                 <span class="text-danger" *ngIf="objError.confirm_password">
