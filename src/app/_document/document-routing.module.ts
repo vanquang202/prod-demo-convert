@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DocumentLayoutComponent } from 'src/app/layouts/document-layout/document-layout.component';
+import { DocumentLayoutComponent } from './document-layout/document-layout.component';
 import { DocumentComponent } from './document/document.component';
 import { DocumentApiComponent } from './document-api/document-api.component';
 import { DocumentCliComponent } from './document-cli/document-cli.component';
@@ -39,4 +39,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocumentPageRoutingModule { }
+export class DocumentRoutingModule { }

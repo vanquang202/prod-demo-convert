@@ -11,12 +11,11 @@ import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig,
 import { environment } from 'src/environments/environment';
 // 
 import { AppComponent } from './app.component';
-import { LayoutsModule } from './layouts/layouts.module';
-import { AuthPageModule } from './pages/auth-page/auth-page.module';
-import { DocumentPageModule } from './pages/document-page/document-page.module';
-import { HomePageModule } from './pages/home-page/home-page.module';
-import { CartPageModule } from './pages/cart-page/cart-page.module';
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { HomeModule } from './_home/home.module';
+import { DocumentModule } from './_document/document.module';
+import { CartModule } from './_cart/cart.module';
+import { AuthModule } from './_auth/auth.module';
 
 
 @NgModule({
@@ -31,11 +30,10 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
     NgxPageScrollCoreModule.forRoot({ duration: 1, }),
     SocialLoginModule,
     GoogleSigninButtonModule,
-    DocumentPageModule,
-    HomePageModule,
-    LayoutsModule,
-    AuthPageModule,
-    CartPageModule,
+    DocumentModule,
+    HomeModule,
+    AuthModule,
+    CartModule,
 
   ],
   providers: [

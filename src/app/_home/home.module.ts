@@ -1,39 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomePageRoutingModule } from './home-page-routing.module';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomeLayoutComponent } from './home-layout/home-layout.component';
 import { ConvertImgComponent } from './convert-img/convert-img.component';
 import { ConvertPdfComponent } from './convert-pdf/convert-pdf.component';
 import { FormatComponent } from './format/format.component';
+import { OcrComponent } from './ocr/ocr.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { SecurityComponent } from './security/security.component';
 import { SupportComponent } from './support/support.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
-import { OcrComponent } from './ocr/ocr.component';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from '../_components/components.module';
 
 
 @NgModule({
   declarations: [
+    HomeLayoutComponent,
     ConvertImgComponent,
     ConvertPdfComponent,
     FormatComponent,
+    OcrComponent,
     PricingComponent,
     SecurityComponent,
     SupportComponent,
-    TrangChuComponent,
-    OcrComponent,
+    TrangChuComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    FormsModule,
-    GoogleSigninButtonModule,
-    ComponentsModule,
-    HomePageRoutingModule
+    HomeRoutingModule,
+    ComponentsModule
   ]
 })
-export class HomePageModule { }
+export class HomeModule { }

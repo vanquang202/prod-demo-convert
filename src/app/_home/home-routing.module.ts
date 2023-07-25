@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DefaultLayoutComponent } from 'src/app/layouts/default-layout/default-layout.component';
+import { HomeLayoutComponent } from './home-layout/home-layout.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { OcrComponent } from './ocr/ocr.component';
 import { ConvertPdfComponent } from './convert-pdf/convert-pdf.component';
@@ -10,11 +10,10 @@ import { FormatComponent } from './format/format.component';
 import { SupportComponent } from './support/support.component';
 import { PricingComponent } from './pricing/pricing.component';
 
-
 const routes: Routes = [
   {
     path: "",
-    component: DefaultLayoutComponent,
+    component: HomeLayoutComponent,
     children: [
       {
         path: "",
@@ -65,4 +64,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomePageRoutingModule { }
+export class HomeRoutingModule { }
