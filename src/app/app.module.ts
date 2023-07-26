@@ -6,17 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 // 
-import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 // 
 import { environment } from 'src/environments/environment';
 // 
 import { AppComponent } from './app.component';
-import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 import { HomeModule } from './_home/home.module';
 import { DocumentModule } from './_document/document.module';
 import { CartModule } from './_cart/cart.module';
 import { AuthModule } from './_auth/auth.module';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { AuthModule } from './_auth/auth.module';
     NgbModule,
     NgxPageScrollCoreModule.forRoot({ duration: 1, }),
     SocialLoginModule,
-    GoogleSigninButtonModule,
     DocumentModule,
     HomeModule,
     AuthModule,
@@ -37,24 +36,17 @@ import { AuthModule } from './_auth/auth.module';
 
   ],
   providers: [
+
     {
-      provide: 'SocialAuthServiceConfig',
+      provide: "SocialAuthServiceConfig",
       useValue: {
         autoLogin: false,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              environment.GG_CLIENT_ID,
-              {
-                oneTapEnabled: false
-              }
-            )
-          }
+            provider: new GoogleLoginProvider(environment.GG_CLIENT_ID),
+          },
         ],
-        onError: (err: any) => {
-          console.error(err);
-        }
       } as SocialAuthServiceConfig,
     },
     {

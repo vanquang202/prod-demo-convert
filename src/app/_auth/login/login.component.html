@@ -57,7 +57,12 @@
             <div>
                 <p class="text-center my-2 text-secondary">- Đăng nhập bằng -</p>
                 <div class="mb-2 rounded px-2 py-1 d-flex align-items-center justify-content-center " role="button">
-                    <asl-google-signin-button type="standard" size='large'></asl-google-signin-button>
+                    <!-- <asl-google-signin-button type="standard" size='large'></asl-google-signin-button> -->
+                    <button href="javascript:;" (click)="loginWithGoogle()"
+                        class="btn_login-google my-btn-primary my-btn-ss">
+                        <i class="fa-brands fa-google"></i>
+                        Login with Google
+                    </button>
                 </div>
             </div>
 
