@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  googleSubscription: any;
   token: any;
 
   isFirstFailed: boolean = false;
@@ -31,17 +30,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (!this.authS.getItem('user')) this.socialAuthService.signOut();
-    // this.googleSubscription = this.socialAuthService.authState.subscribe((user: any) => {
-    //   if (user) {
-    //     this.authS.saveItem('user', user);
-    //     this.authS.sendEvent('loading-page', { status: true });
-    //     setTimeout(() => {
-    //       this.authS.sendEvent('loading-page', { status: false });
-    //       this.router.navigate([""]);
-    //     }, 5000);
-    //   }
-    // });
   }
 
   loginWithGoogle(): void {
@@ -84,7 +72,5 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnDestroy() {
-
-    // this.googleSubscription.unsubscribe();
   }
 }
