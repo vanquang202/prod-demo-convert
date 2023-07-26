@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -31,8 +31,21 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (!this.authS.getItem('user')) this.socialAuthService.signOut();
-    this.googleSubscription = this.socialAuthService.authState.subscribe((user: any) => {
+    // if (!this.authS.getItem('user')) this.socialAuthService.signOut();
+    // this.googleSubscription = this.socialAuthService.authState.subscribe((user: any) => {
+    //   if (user) {
+    //     this.authS.saveItem('user', user);
+    //     this.authS.sendEvent('loading-page', { status: true });
+    //     setTimeout(() => {
+    //       this.authS.sendEvent('loading-page', { status: false });
+    //       this.router.navigate([""]);
+    //     }, 5000);
+    //   }
+    // });
+  }
+
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((user: any) => {
       if (user) {
         this.authS.saveItem('user', user);
         this.authS.sendEvent('loading-page', { status: true });
@@ -72,6 +85,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnDestroy() {
 
-    this.googleSubscription.unsubscribe();
+    // this.googleSubscription.unsubscribe();
   }
 }
