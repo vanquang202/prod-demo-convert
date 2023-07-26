@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginWithGoogle(): void {
+  registerWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((user: any) => {
       if (user) {
         this.authS.saveItem('user', user);
