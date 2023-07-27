@@ -1,56 +1,126 @@
 <ng-container>
-    <header id="header" class="fixed-top  shadow  pb-0 ">
-        <div class="container d-flex align-items-center  ">
+  <header id="header" class="fixed-top shadow pb-0">
+    <div class="container d-flex align-items-center">
+      <h1 [routerLink]="['/']" class="logo me-auto" role="button">
+        <a>
+          <img src="assets/img/logohm.png" width="50px" alt />
+        </a>
+      </h1>
 
-            <h1 class="logo me-auto" role="button" [routerLink]="['/']"><a><img src="assets/img/logohm.png" width="50px"
-                        alt=""></a>
-            </h1>
-
-            <nav id="navbar" [ngClass]="{'navbar-mobile': isMobileNavbar}" class="navbar">
-                <ul>
-                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/ocr']"
-                            routerLinkActive="active">Nhận dạng & Bóc tách</a>
-                    </li>
-                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/convert-pdf']"
-                            routerLinkActive="active">Nén
-                            PDF</a></li>
-                    <li class="dropdown"><a (click)="isMobileMenuDropDown = !isMobileMenuDropDown"><span>Chuyển đổi tệp
-                                tin</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul [ngClass]="{'d-block':  isMobileMenuDropDown}">
-                            <li><a (click)="onClickRouterLink()" [routerLink]="['/convert-img']"
-                                    routerLinkActive="active">Chuyển đổi
-                                    hình ảnh <i class="fa-solid fa-image"></i> </a>
-                            </li>
-                            <li><a (click)="onClickRouterLink()">Xóa background <i class="fa-solid fa-image"></i> </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/pricing']">Dịch vụ </a></li>
-                    <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/document']">Document</a></li>
-                    <ng-container *ngIf="!user">
-                        <li><a (click)="onClickRouterLink()" class="nav-link" [routerLink]="['/login']">Đăng nhập</a>
-                        </li>
-                        <li><a class=" btn-outline-hm btn px-2 py-1 rounded mx-2 " [routerLink]="['/register']">Đăng
-                                ký</a>
-                        </li>
-                    </ng-container>
-                    <ng-container *ngIf="user">
-                        <li class="dropdown"><a (click)="isMobileMenuAccount = !isMobileMenuAccount" href="#?"><span>Hi
-                                    <span class="text-hm fw-bold">{{ user.name }}</span>
-                                </span> <i class="bi bi-chevron-down"></i></a>
-                            <ul [ngClass]="{'d-block':  isMobileMenuAccount}">
-                                <li role="button" (click)="logOut()"><a> Logout </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ng-container>
-                </ul>
-                <i class="fa-solid fa-bars mobile-nav-toggle"
-                    [ngClass]="{'fa-bars': !isMobileNavbar,'fa-xmark text-white': isMobileNavbar}"
-                    (click)="isMobileNavbar = !isMobileNavbar"></i>
-            </nav>
-
-        </div>
-        <app-loading-page></app-loading-page>
-    </header>
+      <nav
+        [ngClass]="{ 'navbar-mobile': isMobileNavbar }"
+        id="navbar"
+        class="navbar"
+      >
+        <ul>
+          <li>
+            <a
+              [routerLink]="['/ocr']"
+              (click)="onClickRouterLink()"
+              class="nav-link"
+              routerLinkActive="active"
+            >
+              Nhận dạng & Bóc tách
+            </a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/convert-pdf']"
+              (click)="onClickRouterLink()"
+              class="nav-link"
+              routerLinkActive="active"
+            >
+              Nén PDF
+            </a>
+          </li>
+          <li class="dropdown">
+            <a (click)="isMobileMenuDropDown = !isMobileMenuDropDown">
+              <span> Chuyển đổi tệp tin </span>
+              <i class="bi bi-chevron-down"></i>
+            </a>
+            <ul [ngClass]="{ 'd-block': isMobileMenuDropDown }">
+              <li>
+                <a
+                  [routerLink]="['/convert-img']"
+                  (click)="onClickRouterLink()"
+                  routerLinkActive="active"
+                >
+                  Chuyển đổi hình ảnh
+                  <i class="fa-solid fa-image"></i>
+                </a>
+              </li>
+              <li>
+                <a (click)="onClickRouterLink()">
+                  Xóa background
+                  <i class="fa-solid fa-image"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/pricing']"
+              (click)="onClickRouterLink()"
+              class="nav-link"
+            >
+              Dịch vụ
+            </a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/document']"
+              (click)="onClickRouterLink()"
+              class="nav-link"
+            >
+              Document
+            </a>
+          </li>
+          <ng-container *ngIf="!user">
+            <li>
+              <a
+                [routerLink]="['/login']"
+                (click)="onClickRouterLink()"
+                class="nav-link"
+              >
+                Đăng nhập
+              </a>
+            </li>
+            <li>
+              <a
+                [routerLink]="['/register']"
+                class="btn-outline-hm btn px-2 py-1 rounded mx-2"
+              >
+                Đăng ký
+              </a>
+            </li>
+          </ng-container>
+          <ng-container *ngIf="user">
+            <li class="dropdown">
+              <a (click)="isMobileMenuAccount = !isMobileMenuAccount" href="#?">
+                <span>
+                  Hi
+                  <span class="text-hm fw-bold">{{ user.name }}</span>
+                </span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul [ngClass]="{ 'd-block': isMobileMenuAccount }">
+                <li (click)="logOut()" role="button">
+                  <a>Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+        <i
+          [ngClass]="{
+            'fa-bars': !isMobileNavbar,
+            'fa-xmark text-white': isMobileNavbar
+          }"
+          (click)="isMobileNavbar = !isMobileNavbar"
+          class="fa-solid fa-bars mobile-nav-toggle"
+        ></i>
+      </nav>
+    </div>
+    <app-loading-page></app-loading-page>
+  </header>
 </ng-container>

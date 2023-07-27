@@ -1,140 +1,219 @@
 <ng-container>
-
-  <div class=" border rounded  position-relative  mx-auto convert shadow d-flex flex-column">
-
-    <div class="head bg-light d-flex rounded-top h    align-items-center py-2">
+  <div
+    class="border rounded position-relative mx-auto convert shadow d-flex flex-column"
+  >
+    <div class="head bg-light d-flex rounded-top align-items-center py-2">
       <p class="ic rounded-circle my-1 ms-2 bg-danger"></p>
       <p class="ic rounded-circle my-1 ms-2 bg-primary"></p>
       <p class="ic rounded-circle my-1 ms-2 bg-warning"></p>
-      <p class="my-0 ms-2 text-secondary px-2 flex-fill  me-2 rounded-top bg-white text-truncate">
-        <i class="fa-sharp fa-solid fa-rotate-right  " [ngClass]="{'fa-spin': isLoading}"></i>
+      <p
+        class="my-0 ms-2 text-secondary px-2 flex-fill me-2 rounded-top bg-white text-truncate"
+      >
+        <i
+          class="fa-sharp fa-solid fa-rotate-right"
+          [ngClass]="{ 'fa-spin': isLoading }"
+        ></i>
         <span class="text-animation ms-2">
-          <span *ngFor="let item of href.split('') ; let i = index" [style]="'--index:'+i">{{ item
-            }}</span>
+          <span
+            *ngFor="let item of href.split(''); let i = index"
+            [style]="'--index:' + i"
+            >{{ item }}</span
+          >
         </span>
       </p>
-      <p [routerLink]="['/support']" class="d-xl-block d-none my-0 text-secondary px-2 me-2 rounded-top section-bg"
-        role="button">
+      <p
+        [routerLink]="['/support']"
+        class="d-xl-block d-none my-0 text-secondary px-2 me-2 rounded-top section-bg"
+        role="button"
+      >
         <i class="fa-sharp fa-solid fa-info"></i>
         Hỗ trợ
       </p>
-      <p [routerLink]="['/security']" class="d-xl-block d-none my-0 text-secondary px-2 me-2 rounded-top section-bg"
-        role="button">
+      <p
+        [routerLink]="['/security']"
+        class="d-xl-block d-none my-0 text-secondary px-2 me-2 rounded-top section-bg"
+        role="button"
+      >
         <i class="fa-sharp fa-solid fa-shield"></i>
         Bảo mật
       </p>
     </div>
 
-    <div class="flex-fill content rounded-bottom d-flex align-items-center justify-content-center align-items-stretch">
-
-      <div *ngIf="files.length > 0" class="  flex-fill d-flex flex-column align-self-stretch w-100 ">
-
+    <div
+      class="flex-fill content rounded-bottom d-flex align-items-center justify-content-center align-items-stretch"
+    >
+      <div
+        *ngIf="files.length > 0"
+        class="flex-fill d-flex flex-column align-self-stretch w-100"
+      >
         <div class="data-wrapper" id="data-wrapper">
-
           <ng-container *ngFor="let item of files; let i = index">
-            <div class="data d-flex-center border-bottom  p-3">
+            <div class="data d-flex-center border-bottom p-3">
               <div class="row m-0 p-0 w-100">
                 <div class="col-xl-4 col-12 m-0 p-0">
-                  <span><i class="fa-solid fa-file p-2 shadow-sm"></i> {{item.file.name}} </span>
+                  <span
+                    ><i class="fa-solid fa-file p-2 shadow-sm"></i>
+                    {{ item.file.name }}
+                  </span>
                 </div>
-                <div class="col-xl-6 col-12 row m-0 p-0 d-flex px-2 align-items-center justify-content-around">
-                  <div class="d-flex col-xl-6 col-12 p-0 justify-content-center">
-                    <div class="dropdown-open ms-2 border border-secondary rounded px-2 py-1 dropdown-toggle"
-                      type="button">
-                      {{ item.type_file?.name ?? '...' }}
-                      <app-type-file (onSelectChange)="onSelectChange($event,i)" class=" "></app-type-file>
+                <div
+                  class="col-xl-6 col-12 row m-0 p-0 d-flex px-2 align-items-center justify-content-around"
+                >
+                  <div
+                    class="d-flex col-xl-6 col-12 p-0 justify-content-center"
+                  >
+                    <div
+                      class="dropdown-open ms-2 border border-secondary rounded px-2 py-1 dropdown-toggle"
+                      type="button"
+                    >
+                      {{ item.type_file?.name ?? "..." }}
+                      <app-type-file
+                        (onSelectChange)="onSelectChange($event, i)"
+                        class=" "
+                      ></app-type-file>
                     </div>
                   </div>
-                  <div *ngIf="!item.type"
-                    class="col-xl-6 col-12 p-0 d-flex align-items-center status-file justify-content-between">
-                    <span class=" border-hm border rounded px-2 text-hm">Sẵn sàng </span>
+                  <div
+                    *ngIf="!item.type"
+                    class="col-xl-6 col-12 p-0 d-flex align-items-center status-file justify-content-between"
+                  >
+                    <span class="border-hm border rounded px-2 text-hm"
+                      >Sẵn sàng
+                    </span>
                   </div>
-                  <div *ngIf="item.type == 1"
-                    class=" col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between">
-                    <span class=" border-warning border rounded px-2 text-warning">Tải lên </span>
+                  <div
+                    *ngIf="item.type == 1"
+                    class="col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between"
+                  >
+                    <span
+                      class="border-warning border rounded px-2 text-warning"
+                      >Tải lên
+                    </span>
                     <span>{{ item.progress }}%</span>
                   </div>
-                  <div *ngIf="item.type == 2"
-                    class="col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between">
-                    <span class=" border-success border rounded px-2 text-success">Đã kết thúc </span>
+                  <div
+                    *ngIf="item.type == 2"
+                    class="col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between"
+                  >
+                    <span
+                      class="border-secondary border rounded px-2 text-secondary"
+                      >Chuyển đổi
+                    </span>
+                    <span>{{ item.progress }}%</span>
+                  </div>
+                  <div
+                    *ngIf="item.type == 3"
+                    class="col-xl-6 col-12 p-0 d-flex gap-2 align-items-center status-file justify-content-between"
+                  >
+                    <span
+                      class="border-success border rounded px-2 text-success"
+                      >Đã kết thúc
+                    </span>
                     <span>1 trang </span>
-                    <button class="btn btn-hm">Tải về </button>
+                    <button class="btn btn-hm">Tải về</button>
                   </div>
                 </div>
                 <div class="col-xl-2 col-12 m-0 p-0 d-flex align-items-center">
-                  <span class="text-secondary">{{ formatBytes(item.file.size) }}</span>
-                  <span (click)="removeFile(i)" class="ms-auto"><i class="fa-solid fa-xmark"></i></span>
+                  <span class="text-secondary">{{
+                    formatBytes(item.file.size)
+                  }}</span>
+                  <span (click)="removeFile(i)" class="ms-auto"
+                    ><i class="fa-solid fa-xmark"></i
+                  ></span>
                 </div>
               </div>
             </div>
           </ng-container>
-
         </div>
-        <div class=" mt-auto  file-tool">
-          <div class="d-flex-center p-2  ">
+        <div class="mt-auto file-tool">
+          <div class="d-flex-center p-2">
             <div class="   ">
-
-              <div class="    dropdown-open" type="button">
+              <div class="dropdown-open" type="button">
                 <i class="fa-solid fa-border-all"></i>
                 Chuyển đổi tất cả
-                <app-type-file (onSelectChange)="onSelectChange($event,-1)" class=""></app-type-file>
+                <app-type-file
+                  (onSelectChange)="onSelectChange($event, -1)"
+                  class=""
+                ></app-type-file>
               </div>
-
             </div>
           </div>
         </div>
 
-        <div class="  rounded-bottom overflow-hidden">
+        <div class="rounded-bottom overflow-hidden">
           <div class="converter d-flex-center w-100 h-100 ps-2">
             <div class="d-flex align-items-center gap-2">
-              <label for="upload-add" class="btn btn-outline-hm"><i class="fa-solid fa-plus  "></i> BỔ SUNG TỆP
+              <label for="upload-add" class="btn btn-outline-hm"
+                ><i class="fa-solid fa-plus"></i> BỔ SUNG TỆP
               </label>
-              <p class="m-0 text-secondary p-0 title-xl">Ctrl, Shift để thêm nhiều tập </p>
+              <p class="m-0 text-secondary p-0 title-xl">
+                Ctrl, Shift để thêm nhiều tập
+              </p>
             </div>
-            <div class="ms-auto d-flex  ">
-              <button (click)="convert()" id="btn-convert"
-                class="rounded-right   py-3 rounded-0   bg-hm text-white border-0 py-2">Chuyển đổi
+            <div class="ms-auto d-flex">
+              <button
+                (click)="convert()"
+                id="btn-convert"
+                class="rounded-right py-3 rounded-0 bg-hm text-white border-0 py-2"
+              >
+                Chuyển đổi
                 <i class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </div>
         </div>
-
       </div>
 
-      <div [ngClass]="{'d-none': files.length > 0}" class="  w-100  rounded-bottom overflow-hidden">
-        <div class="converter d-flex-center w-100 h-100 position-relative overflow-hidden">
+      <div
+        [ngClass]="{ 'd-none': files.length > 0 }"
+        class="w-100 rounded-bottom overflow-hidden"
+      >
+        <div
+          class="converter d-flex-center w-100 h-100 position-relative overflow-hidden"
+        >
           <div class="file-source-button">
-
-            <div class="position-relative " style="z-index: 2;">
-
+            <div class="position-relative" style="z-index: 2">
               <div class="bg-line rounded shadow p-2 text-light">
                 <div class="p-2">
-                  <label for="upload-add" class=" w-100 h-100 d-flex-center fw-bold" role="button">CHỌN TẬP
-                    TIN
-
+                  <label
+                    for="upload-add"
+                    class="w-100 h-100 d-flex-center fw-bold"
+                    role="button"
+                    >CHỌN TẬP TIN
                   </label>
-                  <input (change)="onChangeInput($event)" type="file" name="" id="upload-add" class="d-none"
-                    multiple="true">
+                  <input
+                    (change)="onChangeInput($event)"
+                    type="file"
+                    name=""
+                    id="upload-add"
+                    class="d-none"
+                    multiple="true"
+                  />
                 </div>
               </div>
-              <p class="text-secondary mt-1 fs-7"><i class="fa-solid fa-grip-vertical me-2"></i>Tối đa 100 MB hoặc là <a
-                  [routerLink]="'register'" class="text-hm">Đăng ký</a> để chuyển đổi nhiều hơn
+              <p class="text-secondary mt-1 fs-7">
+                <i class="fa-solid fa-grip-vertical me-2"></i>Tối đa 100 MB hoặc
+                là <a [routerLink]="'register'" class="text-hm">Đăng ký</a> để
+                chuyển đổi nhiều hơn
               </p>
-
             </div>
 
-            <img style="position: absolute; right: 0; bottom: 0;width: 30%;"
-              src="https://www.fegno.com/wp-content/uploads/2022/03/web-development-company-in-kochi.gif" alt="">
-
+            <img
+              style="position: absolute; right: 0; bottom: 0; width: 30%"
+              src="https://www.fegno.com/wp-content/uploads/2022/03/web-development-company-in-kochi.gif"
+              alt=""
+            />
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <div id="preloader_drop" (click)="isActive = false" [ngClass]="{active: isActive}">
+  <div
+    id="preloader_drop"
+    (click)="isActive = false"
+    [ngClass]="{ active: isActive }"
+  >
     <i class="fa-sharp fa-solid fa-plus"></i>
   </div>
 </ng-container>
