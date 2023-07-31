@@ -38,6 +38,12 @@ export class ConvertComponent implements OnInit {
   convert() {
     this.isLoading = true;
     this.authS.sendEvent('loading-page', { status: true });
+    const fileSave = this.files.map((file: any) => {
+      file.file = { name: file.file.name, size: file.file.size };
+      return file;
+    });
+
+    this.authS.saveItem("fhc", fileSave);
     this.files.forEach((file: any) => {
       file.type = 1;
       file.progress = 0;

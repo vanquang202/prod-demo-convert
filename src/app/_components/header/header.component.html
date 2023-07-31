@@ -75,6 +75,15 @@
               Document
             </a>
           </li>
+          <li>
+            <a
+              [routerLink]="['/my-files']"
+              (click)="onClickRouterLink()"
+              class="nav-link"
+            >
+              My Files
+            </a>
+          </li>
           <ng-container *ngIf="!user">
             <li>
               <a

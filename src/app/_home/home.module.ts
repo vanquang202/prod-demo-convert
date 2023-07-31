@@ -12,6 +12,7 @@ import { SecurityComponent } from './security/security.component';
 import { SupportComponent } from './support/support.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { ComponentsModule } from '../_components/components.module';
+import { HistoryConvertComponent } from './history-convert/history-convert.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ComponentsModule } from '../_components/components.module';
     PricingComponent,
     SecurityComponent,
     SupportComponent,
-    TrangChuComponent
+    TrangChuComponent,
+    HistoryConvertComponent
   ],
   imports: [
     CommonModule,
