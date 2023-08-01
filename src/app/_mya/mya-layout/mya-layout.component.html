@@ -96,19 +96,20 @@
         (click)="isMobile = true"
         class="text-secondary d-block d-xl-none fa-solid fa-bars fs-4"
       ></i>
-      <button
-        [routerLink]="['/pricing']"
-        class="btn btn-outline-hm ms-3 d-flex align-items-center justify-content-center"
-      >
-        <i class="fa-solid fa-plus fw-bold"></i>
-        <span class="d-xl-inline d-none ms-2">Đăng ký dịch vụ</span>
-      </button>
-      <div class="ms-auto d-flex align-items-center">
-        <span class="border rounded p-2 mx-2 text-truncate">
+
+      <div class="ms-auto d-flex align-items-center align-items-stretch">
+        <button
+          [routerLink]="['/pricing']"
+          class="btn btn-outline-hm me-1 d-flex align-items-center justify-content-center"
+        >
+          <i class="fa-solid fa-circle-plus"></i>
+          <span class="d-xl-inline d-none ms-2">Đăng ký dịch vụ</span>
+        </button>
+        <span class="border rounded p-2 mx-1 text-truncate">
           <i class="fa-solid fa-wallet mx-2 text-hm"></i>
           0 &#8363;
         </span>
-        <span class="border rounded-pill p-2 mx-2">
+        <span class="border rounded p-2 mx-1">
           <b class="text-truncate"> {{ user.name }} </b>
           <i
             title="Đăng xuất "
