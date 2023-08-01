@@ -30,5 +30,6 @@ export class HistoryConvertComponent implements OnInit {
 
   removeFile(i: number) {
     this.files.splice(i, 1);
+    this.authS.saveItem("fhc", this.files);
   }
 }

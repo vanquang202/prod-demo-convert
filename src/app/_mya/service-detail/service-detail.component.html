@@ -1,0 +1,90 @@
+<div class="">
+  <div class="head bg-white p-3">
+    <div class="container px-0">
+      <div class="d-flex align-items-center">
+        <small
+          role="button"
+          [routerLink]="['/mya/service']"
+          class="text-secondary"
+          >Dịch vụ của tôi
+        </small>
+        <span class="mx-2 text-secondary">
+          <i class="fa-solid fa-angle-right"></i>
+        </span>
+        <h4 class="py-1 text-secondary fw-bold m-0">{{ objService.name }}</h4>
+        <!-- <small class="text-secondary fw-bold">  </small> -->
+        <small
+          style="font-size: 10px; user-select: none"
+          class="bg-success ms-2 fw-bold px-2 py-1 rounded-pill text-white d-flex align-items-center justify-content-center"
+          ><i class="fa-solid fa-circle me-2"></i> Đang sử dụng
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="bod mt-5 container">
+    <div class="row m-0 p-0">
+      <div class="col-xl-9 col-12 p-0 px-1">
+        <div class="bg-white shadow-sm rounded p-3 mb-3">
+          <div class="border-bottom pb-3 d-flex align-items-center">
+            <span class="fs-3 fw-bold text-hm"> {{ objService.name }} </span>
+            <div class="ms-auto d-flex gap-2">
+              <span class="px-2 text-secondary"
+                >Ngày hết hạn<br />
+                <span class="fw-bold">01/08/2023</span>
+              </span>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-xl-4 col-6 p-2 text-center">
+              <p class="m-0">
+                <i class="fa-solid fa-calendar-days me-2"></i> Chu kì
+              </p>
+              <p class="m-0 fw-bold">24m</p>
+            </div>
+            <div class="col-xl-4 col-6 p-2 text-center">
+              <p class="m-0">
+                <i class="fa-solid fa-money-bill me-2"></i> Gia hạn
+              </p>
+              <p class="m-0 fw-bold">200.0000 VND</p>
+            </div>
+            <div class="col-xl-4 col-12 p-2 text-center">
+              <p class="m-0">
+                <i class="fa-solid fa-credit-card me-2"></i> Phương thức
+              </p>
+              <p class="m-0 fw-bold">Chuyển khoản NH</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-sm rounded p-3 mb-3">
+          <span class="fw-bold"> Thông tin chung </span>
+
+          <ng-container *ngFor="let option of objService.options">
+            <p class="m-0 p-2">
+              <i [class]="option.icon" class="me-2"></i> {{ option.name }}
+            </p>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-xl-3 col-12 p-0 px-1 m-0 mb-3">
+        <div class="bg-white p-3 shadow-sm rounded">
+          <h4 class="fw-bold">Cài đặt</h4>
+          <div
+            role="button"
+            class="d-flex align-items-center py-2 border-bottom"
+          >
+            <span>Hủy gói </span>
+            <i class="ms-auto fa-solid fa-angle-right"></i>
+          </div>
+          <div
+            role="button"
+            class="d-flex align-items-center py-2 border-bottom"
+          >
+            <span>Thay đổi gia hạn </span>
+            <i class="ms-auto fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

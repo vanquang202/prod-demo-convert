@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   user: any = {};
+  countFileSaveLocal: number = 0;
   isLogin: boolean = false;
   isMobileMenuDropDown: boolean = false;
   isMobileMenuAccount: boolean = false;
@@ -30,6 +31,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.countFileSaveLocal = this.authS.getItem("fhc").length;
     this.user = this.authS.getItem('user');
     this.socialAuthService.authState.subscribe((user: any) => {
       this.authS.saveItem('user', user);

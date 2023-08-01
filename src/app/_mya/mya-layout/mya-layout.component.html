@@ -1,1 +1,108 @@
-<p>mya-layout works!</p>
+<div class="mya-body d-flex align-items-stretch">
+  <div
+    [ngClass]="{
+      'w-unset': isHideTabLeft,
+      'w-nunset': !isHideTabLeft,
+      'd-block': isMobile
+    }"
+    class="tab-left"
+  >
+    <div class="tab-left-mobile d-flex flex-column border bg-white h-100 w-100">
+      <div
+        style="height: 8vh !important"
+        class="logo w-100 text-center py-2 d-flex px-3 align-items-center justify-content-center"
+      >
+        <img
+          role="button"
+          [routerLink]="['']"
+          src="assets/img/logohm.png"
+          alt=""
+          width="40px"
+        />
+        <i
+          (click)="isMobile = false"
+          class="ms-auto cancel-mobile d-show d-xl-none fs-1 text-secondary fa-solid fa-xmark"
+        ></i>
+      </div>
+      <div class="mt-2 menu-list text-secondary">
+        <div class="service mt-2">
+          <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Dịch vụ </small>
+          <p
+            title="Dịch vụ của tôi "
+            [routerLink]="['/mya/service']"
+            (click)="onClickRouterLink()"
+            routerLinkActive="active"
+            role="button"
+            class="py-3 px-2 fw-bold m-0 text-truncate"
+            [ngClass]="{ 'text-center': isHideTabLeft }"
+          >
+            <i class="fa-solid fa-bars-progress mx-3"></i>
+            <span *ngIf="!isHideTabLeft">Dịch vụ của tôi</span>
+          </p>
+        </div>
+
+        <div class="service mt-2">
+          <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Tài khoản </small>
+          <p
+            title="Hóa đơn"
+            role="button"
+            class="py-3 px-2 fw-bold m-0 text-truncate"
+            [ngClass]="{ 'text-center': isHideTabLeft }"
+          >
+            <i class="fa-solid fa-receipt mx-3"></i>
+            <span *ngIf="!isHideTabLeft">Hóa đơn</span>
+          </p>
+          <p
+            title="Thông tin tài khoản "
+            role="button"
+            class="py-3 px-2 fw-bold m-0 text-truncate"
+            [ngClass]="{ 'text-center': isHideTabLeft }"
+          >
+            <i class="fa-solid fa-user mx-3"></i>
+            <span *ngIf="!isHideTabLeft">Thông tin tài khoản</span>
+          </p>
+        </div>
+      </div>
+      <div class="mt-auto text-center">
+        <small *ngIf="!isHideTabLeft" class="text-secondary"
+          >@Hmdigi manager account</small
+        >
+      </div>
+    </div>
+  </div>
+  <div class="tab-right flex-fill overflow-hidden d-flex flex-column">
+    <div
+      style="height: 8vh !important"
+      class="tr-header bg-white p-3 d-flex align-items-center border-bottom"
+    >
+      <i
+        (click)="isHideTabLeft = !isHideTabLeft"
+        class="text-secondary d-xl-block d-none fa-solid fa-bars fs-4"
+      ></i>
+      <i
+        (click)="isMobile = true"
+        class="text-secondary d-block d-xl-none fa-solid fa-bars fs-4"
+      ></i>
+      <button
+        [routerLink]="['/pricing']"
+        class="btn btn-outline-hm ms-3 d-flex align-items-center justify-content-center"
+      >
+        <i class="fa-solid fa-plus fw-bold"></i>
+        <span class="d-xl-inline d-none ms-2">Đăng ký dịch vụ</span>
+      </button>
+      <div class="ms-auto">
+        <span class="border rounded p-2 mx-2">
+          <i class="fa-solid fa-wallet mx-2 text-hm"></i>
+          0 VND
+        </span>
+        <span class="border rounded-pill p-2 mx-2">
+          Hi <b>Account</b>
+          <i class="fa-solid fa-right-from-bracket ms-2"></i>
+        </span>
+      </div>
+    </div>
+    <div class="tr-body flex-fill bg-light overflow-y-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

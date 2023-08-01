@@ -17,6 +17,7 @@ import { DocumentModule } from './_document/document.module';
 import { CartModule } from './_cart/cart.module';
 import { AuthModule } from './_auth/auth.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyaModule } from './_mya/mya.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     HomeModule,
     AuthModule,
     CartModule,
-
+    MyaModule
   ],
   providers: [
 

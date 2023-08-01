@@ -75,13 +75,16 @@
               Document
             </a>
           </li>
-          <li>
+          <li *ngIf="countFileSaveLocal > 0">
             <a
               [routerLink]="['/my-files']"
               (click)="onClickRouterLink()"
               class="nav-link"
             >
               My Files
+              <small class="bg-hm rounded px-1 text-white ms-2"
+                >{{ countFileSaveLocal }}
+              </small>
             </a>
           </li>
           <ng-container *ngIf="!user">
@@ -113,8 +116,13 @@
                 <i class="bi bi-chevron-down"></i>
               </a>
               <ul [ngClass]="{ 'd-block': isMobileMenuAccount }">
+                <li [routerLink]="['mya/service']" role="button">
+                  <a
+                    >Quản lý dịch vụ <i class="fa-solid fa-bars-progress"></i
+                  ></a>
+                </li>
                 <li (click)="logOut()" role="button">
-                  <a>Logout</a>
+                  <a>Logout <i class="fa-solid fa-right-from-bracket"></i></a>
                 </li>
               </ul>
             </li>

@@ -22,19 +22,48 @@
               class="col-xl-6 col-12 row m-0 p-0 d-flex px-2 align-items-center justify-content-around"
             >
               <div
-                class="col-xl-6 col-12 p-0 d-flex align-items-center status-file justify-content-between"
+                class="col-xl-6 col-6 p-0 d-flex align-items-center flex-column status-file justify-content-between"
               >
                 <span class="border-hm border rounded px-2 text-hm"
                   >Đã kết thúc
                 </span>
               </div>
+              <div
+                class="col-xl-6 col-6 p-0 d-flex align-items-center justify-content-center"
+              >
+                <span
+                  class="border-secondary border rounded px-2 text-secondary"
+                >
+                  {{
+                    item.file.name
+                      .split(".")
+                      [item.file.name.split(".").length - 1].toUpperCase()
+                  }}
+                </span>
+                <i class="fa-solid mx-1 fa-angle-right"></i>
+                <span class="border-dark border rounded px-2 text-hm">
+                  {{ item.type_file?.name }}
+                </span>
+              </div>
             </div>
-            <div class="col-xl-2 col-12 m-0 p-0 d-flex align-items-center">
+            <div
+              class="col-xl-2 col-12 m-0 p-0 d-flex align-items-center justify-content-between"
+            >
               <span class="text-secondary">
-                {{ item.type_file?.name }} /
                 {{ formatBytes(item.file.size) }}</span
               >
-              <span (click)="removeFile(i)" class="ms-auto"
+              <span title="Tải về " class="py-1 px-2 rounded bg-hm text-white">
+                <i class="text-white fa-solid fa-download"></i>
+              </span>
+
+              <span
+                title="Đã quá thời gian lưu trữ "
+                class="py-1 px-2 rounded bg-secondary text-warning"
+              >
+                <i class="fa-solid fa-ban"></i>
+              </span>
+
+              <span (click)="removeFile(i)" class=" "
                 ><i class="fa-solid fa-xmark"></i
               ></span>
             </div>

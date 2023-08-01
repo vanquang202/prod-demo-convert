@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./mya-layout.component.css']
 })
 export class MyaLayoutComponent {
+  isHideTabLeft: boolean = false;
+  isMobile: boolean = false;
 
+  onClickRouterLink() {
+    this.isMobile = false;
+  }
 }
