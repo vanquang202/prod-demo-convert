@@ -1,4 +1,13 @@
 .active{
     color: black  !important;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
+    font-weight: bold;
+    animation: textActive .1s;
 }
+
+@keyframes textActive{
+    0%{
+        border-bottom: 0px solid black;
+    }
+    100%{}
+  }

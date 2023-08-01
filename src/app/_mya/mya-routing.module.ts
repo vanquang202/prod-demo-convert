@@ -12,14 +12,14 @@ const routes: Routes = [
     children: [
       {
         path: "service",
-        component: ServiceComponent
+        component: ServiceComponent,
       },
       {
         path: "received",
         component: ReceivedComponent
       },
       {
-        path: "service-detail",
+        path: "service/detail",
         component: ServiceDetailComponent
       },
     ]
