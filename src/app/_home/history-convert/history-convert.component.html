@@ -12,14 +12,14 @@
       <ng-container *ngFor="let item of files; let i = index">
         <div class="data d-flex-center border-bottom p-3">
           <div class="row m-0 p-0 w-100">
-            <div class="col-xl-4 col-12 m-0 p-0">
+            <div class="col-xl-4 col-12 m-0 mb-2 p-0">
               <span
                 ><i class="fa-solid fa-file p-2 shadow-sm"></i>
                 {{ item.file.name }}
               </span>
             </div>
             <div
-              class="col-xl-6 col-12 row m-0 p-0 d-flex px-2 align-items-center justify-content-around"
+              class="col-xl-6 col-12 row m-0 mb-2 p-0 d-flex px-2 align-items-center justify-content-around"
             >
               <div
                 class="col-xl-6 col-6 p-0 d-flex align-items-center flex-column status-file justify-content-between"
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div
-              class="col-xl-2 col-12 m-0 p-0 d-flex align-items-center justify-content-between"
+              class="col-xl-2 col-12 m-0 mb-2 p-0 d-flex align-items-center justify-content-between"
             >
               <span class="text-secondary">
                 {{ formatBytes(item.file.size) }}</span
