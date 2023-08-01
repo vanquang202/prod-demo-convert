@@ -29,7 +29,7 @@
       <div class="bg-light flex-fill menu-list text-secondary">
         <div class="service mt-2">
           <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Dịch vụ </small>
-          <small *ngIf="isHideTabLeft" class="mx-3 fw-bold"></small>
+          <!-- <small *ngIf="isHideTabLeft" class="mx-3 fw-bold"></small> -->
           <p
             title="Dịch vụ của tôi "
             [routerLink]="['/mya/service']"
@@ -46,8 +46,8 @@
 
         <div class="service mt-2">
           <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Tài khoản </small>
-          <small *ngIf="isHideTabLeft" class="mx-3 fw-bold text-center">
-          </small>
+          <!-- <small *ngIf="isHideTabLeft" class="mx-3 fw-bold text-center">
+          </small> -->
           <p
             [routerLink]="['/mya/received']"
             (click)="onClickRouterLink()"
