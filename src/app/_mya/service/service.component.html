@@ -9,7 +9,7 @@
   <div class="container shadow-sm mt-2 bg-white rounded">
     <div class="d-flex align-items-center py-3 px-4 border-bottom">
       <span
-        class="d-flex align-items-center pe-3 ps-1 overflow-hidden border rounded-pill"
+        class="d-flex align-items-center pe-3 overflow-hidden border rounded-pill"
       >
         <input type="text" placeholder="Tìm kiếm dịch vụ  " />
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -38,8 +38,22 @@
         <div class="col-xl-2 px-2 col-12 text-secondary">
           Chu kì : {{ service.typePayment | number }}m
         </div>
-        <div class="col-xl-2 px-2 col-12 text-success">Đang sử dụng</div>
-        <div class="col-xl-2 px-2 col-12 text-success d-flex flex-wrap">
+        <!-- <small
+            style="font-size: 10px; user-select: none"
+            class="bg-success ms-2 fw-bold px-2 py-1 rounded-pill text-white d-flex align-items-center justify-content-center"
+            ><i class="fa-solid fa-circle me-2"></i> Đang sử dụng
+          </small> -->
+        <div class="col-xl-4 px-2 col-12 text-success d-flex flex-wrap">
+          <small
+            style="font-size: 10px; user-select: none"
+            class="bg-success me-2 fw-bold px-2 py-1 rounded flex-fill text-white d-flex align-items-center justify-content-center"
+            ><i class="fa-solid fa-circle me-2"></i> Đang sử dụng
+          </small>
+          <!-- <small
+            style="font-size: 10px; user-select: none"
+            class="bg-danger flex-fill me-2 fw-bold px-2 py-1 rounded text-white d-flex align-items-center justify-content-center"
+            ><i class="fa-solid fa-circle me-2"></i> Đã hết hạn
+          </small> -->
           <button
             [routerLink]="['/mya/service/detail']"
             class="ms-auto btn py-1 rounded btn-secondary"
