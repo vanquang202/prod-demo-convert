@@ -7,9 +7,7 @@
     }"
     class="tab-left"
   >
-    <div
-      class="tab-left-mobile d-flex flex-column border-end bg-white h-100 w-100"
-    >
+    <div class="tab-left-mobile d-flex flex-column bg-white h-100 w-100">
       <div
         style="height: 8vh !important"
         class="logo w-100 text-center py-2 d-flex px-3 align-items-center m-0 justify-content-center"
@@ -26,9 +24,14 @@
           class="ms-auto cancel-mobile d-show d-xl-none fs-1 text-secondary fa-solid fa-xmark"
         ></i>
       </div>
-      <div class="bg-light flex-fill menu-list text-secondary">
-        <div class="service mt-2">
-          <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Dịch vụ </small>
+      <div
+        [ngClass]="{ 'border rounded': isMobile }"
+        class="bg-light border-end flex-fill menu-list text-secondary"
+      >
+        <div class="service mt-3">
+          <small *ngIf="!isHideTabLeft" class="text-secondary mx-3 fw-bold"
+            >Dịch vụ
+          </small>
           <!-- <small *ngIf="isHideTabLeft" class="mx-3 fw-bold"></small> -->
           <p
             title="Dịch vụ của tôi "
@@ -36,16 +39,18 @@
             (click)="onClickRouterLink()"
             routerLinkActive="active"
             role="button"
-            class="py-3 px-2 fw-bold m-0 text-truncate"
+            class="py-3 px-3 fw-bold m-0 d-flex align-items-center"
             [ngClass]="{ 'text-center': isHideTabLeft }"
           >
-            <i class="fa-solid fa-bars-progress mx-3"></i>
-            <span *ngIf="!isHideTabLeft">Dịch vụ của tôi</span>
+            <i class="fs-5 fa-solid fa-bars-progress"></i>
+            <span class="ms-3" *ngIf="!isHideTabLeft">Dịch vụ của tôi</span>
           </p>
         </div>
 
         <div class="service mt-2">
-          <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Tài khoản </small>
+          <small *ngIf="!isHideTabLeft" class="text-secondary mx-3 fw-bold"
+            >Tài khoản
+          </small>
           <!-- <small *ngIf="isHideTabLeft" class="mx-3 fw-bold text-center">
           </small> -->
           <p
@@ -54,11 +59,11 @@
             routerLinkActive="active"
             title="Hóa đơn"
             role="button"
-            class="py-3 px-2 fw-bold m-0 text-truncate"
+            class="py-3 px-3 fw-bold m-0 d-flex align-items-center"
             [ngClass]="{ 'text-center': isHideTabLeft }"
           >
-            <i class="fa-solid fa-receipt mx-3"></i>
-            <span *ngIf="!isHideTabLeft">Hóa đơn</span>
+            <i class="fs-5 fa-solid fa-receipt"></i>
+            <span class="ms-3" *ngIf="!isHideTabLeft">Hóa đơn</span>
           </p>
         </div>
       </div>
@@ -79,6 +84,12 @@
     >
       <i
         (click)="isHideTabLeft = !isHideTabLeft"
+        *ngIf="!isHideTabLeft"
+        class="fa-solid d-xl-block d-none fa-ellipsis-vertical fs-4"
+      ></i>
+      <i
+        (click)="isHideTabLeft = !isHideTabLeft"
+        *ngIf="isHideTabLeft"
         class="text-secondary d-xl-block d-none fa-solid fa-bars fs-4"
       ></i>
       <i
