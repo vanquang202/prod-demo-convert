@@ -7,10 +7,12 @@
     }"
     class="tab-left"
   >
-    <div class="tab-left-mobile d-flex flex-column border bg-white h-100 w-100">
+    <div
+      class="tab-left-mobile d-flex flex-column border-end bg-white h-100 w-100"
+    >
       <div
         style="height: 8vh !important"
-        class="logo w-100 text-center py-2 d-flex px-3 align-items-center justify-content-center"
+        class="logo w-100 text-center py-2 d-flex px-3 align-items-center m-0 justify-content-center"
       >
         <img
           role="button"
@@ -24,9 +26,10 @@
           class="ms-auto cancel-mobile d-show d-xl-none fs-1 text-secondary fa-solid fa-xmark"
         ></i>
       </div>
-      <div class="mt-2 menu-list text-secondary">
+      <div class="bg-light flex-fill menu-list text-secondary">
         <div class="service mt-2">
           <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Dịch vụ </small>
+          <small *ngIf="isHideTabLeft" class="mx-3 fw-bold"></small>
           <p
             title="Dịch vụ của tôi "
             [routerLink]="['/mya/service']"
@@ -43,7 +46,12 @@
 
         <div class="service mt-2">
           <small *ngIf="!isHideTabLeft" class="mx-3 fw-bold">Tài khoản </small>
+          <small *ngIf="isHideTabLeft" class="mx-3 fw-bold text-center">
+          </small>
           <p
+            [routerLink]="['/mya/received']"
+            (click)="onClickRouterLink()"
+            routerLinkActive="active"
             title="Hóa đơn"
             role="button"
             class="py-3 px-2 fw-bold m-0 text-truncate"
@@ -52,28 +60,22 @@
             <i class="fa-solid fa-receipt mx-3"></i>
             <span *ngIf="!isHideTabLeft">Hóa đơn</span>
           </p>
-          <p
-            title="Thông tin tài khoản "
-            role="button"
-            class="py-3 px-2 fw-bold m-0 text-truncate"
-            [ngClass]="{ 'text-center': isHideTabLeft }"
-          >
-            <i class="fa-solid fa-user mx-3"></i>
-            <span *ngIf="!isHideTabLeft">Thông tin tài khoản</span>
-          </p>
         </div>
       </div>
       <div class="mt-auto text-center">
-        <small *ngIf="!isHideTabLeft" class="text-secondary"
-          >@Hmdigi manager account</small
-        >
+        <small *ngIf="!isHideTabLeft" class="text-secondary">
+          <div class="copyright">
+            &copy; Copyright <strong><span>HMDIGI</span></strong
+            >. All Rights Reserved
+          </div>
+        </small>
       </div>
     </div>
   </div>
   <div class="tab-right flex-fill overflow-hidden d-flex flex-column">
     <div
       style="height: 8vh !important"
-      class="tr-header bg-white p-3 d-flex align-items-center border-bottom"
+      class="tr-header bg-white p-3 d-flex align-items-center"
     >
       <i
         (click)="isHideTabLeft = !isHideTabLeft"
@@ -90,14 +92,18 @@
         <i class="fa-solid fa-plus fw-bold"></i>
         <span class="d-xl-inline d-none ms-2">Đăng ký dịch vụ</span>
       </button>
-      <div class="ms-auto">
-        <span class="border rounded p-2 mx-2">
+      <div class="ms-auto d-flex align-items-center">
+        <span class="border rounded p-2 mx-2 text-truncate">
           <i class="fa-solid fa-wallet mx-2 text-hm"></i>
-          0 VND
+          0 &#8363;
         </span>
         <span class="border rounded-pill p-2 mx-2">
-          Hi <b>Account</b>
-          <i class="fa-solid fa-right-from-bracket ms-2"></i>
+          <b class="text-truncate"> {{ user.name }} </b>
+          <i
+            title="Đăng xuất "
+            (click)="logOut()"
+            class="text-secondary fa-solid fa-right-from-bracket ms-2"
+          ></i>
         </span>
       </div>
     </div>

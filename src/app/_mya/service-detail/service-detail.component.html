@@ -1,5 +1,5 @@
 <div class="">
-  <div class="head bg-white p-3">
+  <div class="head section-bg p-3">
     <div class="container px-0">
       <div class="d-flex align-items-center">
         <small
@@ -12,7 +12,6 @@
           <i class="fa-solid fa-angle-right"></i>
         </span>
         <h4 class="py-1 text-secondary fw-bold m-0">{{ objService.name }}</h4>
-        <!-- <small class="text-secondary fw-bold">  </small> -->
         <small
           style="font-size: 10px; user-select: none"
           class="bg-success ms-2 fw-bold px-2 py-1 rounded-pill text-white d-flex align-items-center justify-content-center"
@@ -56,7 +55,34 @@
           </div>
         </div>
 
-        <div class="bg-white shadow-sm rounded p-3 mb-3">
+        <div class="tab d-flex py-1 mb-2">
+          <span
+            role="button"
+            (click)="tab = 1"
+            [ngClass]="{ active: tab == 1 }"
+            class="fw-bold me-4 text-secondary"
+          >
+            TT chung
+          </span>
+          <span
+            role="button"
+            (click)="tab = 2"
+            [ngClass]="{ active: tab == 2 }"
+            class="fw-bold me-4 text-secondary"
+          >
+            TT bổ sung
+          </span>
+          <span
+            role="button"
+            (click)="tab = 3"
+            [ngClass]="{ active: tab == 3 }"
+            class="fw-bold me-4 text-secondary"
+          >
+            Tài nguyên
+          </span>
+        </div>
+
+        <div *ngIf="tab == 1" class="bg-white shadow-sm rounded p-3 mb-3">
           <span class="fw-bold"> Thông tin chung </span>
 
           <ng-container *ngFor="let option of objService.options">
@@ -64,6 +90,23 @@
               <i [class]="option.icon" class="me-2"></i> {{ option.name }}
             </p>
           </ng-container>
+        </div>
+
+        <div *ngIf="tab == 2" class="bg-white shadow-sm rounded p-3 mb-3">
+          <span class="fw-bold"> Thông tin bổ sung </span>
+          <p>Empty</p>
+        </div>
+
+        <div *ngIf="tab == 3" class="bg-white shadow-sm rounded p-3 mb-3">
+          <span class="fw-bold"> Tài nguyên đã sử dụng </span>
+          <p class="m-0 p-2">
+            <i class="fa-solid fa-memory me-2 text-hm"></i> Số file đã chuyển
+            đổi trong tháng : <b>99</b> file
+          </p>
+          <p class="m-0 p-2">
+            <i class="fa-solid fa-memory me-2 text-hm"></i> Tài nguyên sử dụng :
+            <b>99</b> G
+          </p>
         </div>
       </div>
       <div class="col-xl-3 col-12 p-0 px-1 m-0 mb-3">

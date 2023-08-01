@@ -1,4 +1,4 @@
-<div class="head bg-white p-3">
+<div class="head section-bg p-3">
   <div class="container px-0">
     <div class="d-flex align-items-center">
       <h4 class="py-1 text-secondary fw-bold m-0">Dịch vụ của tôi</h4>
@@ -14,7 +14,7 @@
       </span>
       <span
         role="button"
-        class="text-white fw-bold p-2 bg-hm-500 rounded ms-auto"
+        class="text-white fw-bold d-xl-block d-none p-2 bg-hm-500 rounded ms-auto"
         >Tất cả
         <span class="text-white bg-hm p-1 rounded-pill">
           {{ dsObjService.length }}
@@ -27,17 +27,17 @@
         class="cr p-3 row m-0 p-0 border-bottom border-light"
         role="button"
       >
-        <div class="col-xl-3 px-2 mb-2col-12 text-hm fw-bold">
+        <div class="col-xl-3 px-2 col-12 text-hm fw-bold">
           {{ service.name }}
         </div>
-        <div class="col-xl-3 px-2 mb-2 col-12 text-warning">
+        <div class="col-xl-3 px-2 col-12 text-warning">
           {{ service.price | number }} VND
         </div>
-        <div class="col-xl-2 px-2 mb-2 col-12 text-secondary">
-          Chu kì: {{ service.typePayment | number }}m
+        <div class="col-xl-2 px-2 col-12 text-secondary">
+          Chu kì : {{ service.typePayment | number }}m
         </div>
-        <div class="col-xl-2 px-2 mb-2 col-12 text-success">Đang sử dụng</div>
-        <div class="col-xl-2 px-2 mb-2 col-12 text-success d-flex flex-wrap">
+        <div class="col-xl-2 px-2 col-12 text-success">Đang sử dụng</div>
+        <div class="col-xl-2 px-2 col-12 text-success d-flex flex-wrap">
           <button
             [routerLink]="['/mya/service-detail']"
             class="ms-auto btn py-1 rounded btn-secondary"

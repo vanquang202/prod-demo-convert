@@ -5,13 +5,14 @@ import { MyaRoutingModule } from './mya-routing.module';
 import { MyaLayoutComponent } from './mya-layout/mya-layout.component';
 import { ServiceComponent } from './service/service.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
-
+import { ReceivedComponent } from './received/received.component';
 
 @NgModule({
   declarations: [
     MyaLayoutComponent,
     ServiceComponent,
     ServiceDetailComponent,
+    ReceivedComponent,
   ],
   imports: [
     CommonModule,

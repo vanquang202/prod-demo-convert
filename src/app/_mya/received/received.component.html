@@ -1,0 +1,52 @@
+<div class="head section-bg p-3">
+  <div class="container px-0">
+    <div class="d-flex align-items-center">
+      <h4 class="py-1 text-secondary fw-bold m-0">Hóa đơn của tôi</h4>
+    </div>
+  </div>
+</div>
+<div class="p-3">
+  <div class="container shadow-sm mt-2 bg-white rounded">
+    <div class="table bg-white">
+      <div
+        *ngFor="let received of dsObjReceived"
+        class="cr p-3 row m-0 p-0 border-bottom border-light"
+        role="button"
+      >
+        <div class="col-9 px-2 text-hm fw-bold">
+          {{ received.name }}
+        </div>
+
+        <div
+          class="col-3 px-2 text-success d-flex flex-wrap gap-2 justify-content-center"
+        >
+          <span
+            *ngIf="received.status == 0"
+            style="font-size: 10px"
+            class="fw-bold rounded text-white bg-danger ms-auto"
+            >Quá hạn
+          </span>
+          <span
+            *ngIf="received.status == 2"
+            style="font-size: 10px"
+            class="fw-bold rounded text-white bg-success ms-auto"
+            >Thàng công
+          </span>
+          <span
+            *ngIf="received.status == 1"
+            style="font-size: 10px"
+            class="fw-bold rounded text-white bg-primary ms-auto"
+            >Đang chờ</span
+          >
+          <button
+            [routerLink]="['/mya/service-detail']"
+            class="ms-auto btn py-1 rounded btn-secondary"
+          >
+            <span class="d-xl-block d-none"> Xem hóa dơn </span>
+            <i class="fa-solid fa-eye d-block d-xl-none"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
