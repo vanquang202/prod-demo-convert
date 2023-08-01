@@ -7,7 +7,10 @@
     }"
     class="tab-left"
   >
-    <div class="tab-left-mobile d-flex flex-column bg-white h-100 w-100">
+    <div
+      [ngClass]="{ 'border rounded': isMobile }"
+      class="tab-left-mobile border-end d-flex flex-column bg-light h-100 w-100"
+    >
       <div
         style="height: 8vh !important"
         class="logo w-100 text-center py-2 d-flex px-3 align-items-center m-0 justify-content-center"
@@ -24,10 +27,7 @@
           class="ms-auto cancel-mobile d-show d-xl-none fs-1 text-secondary fa-solid fa-xmark"
         ></i>
       </div>
-      <div
-        [ngClass]="{ 'border rounded': isMobile }"
-        class="bg-light border-end flex-fill menu-list text-secondary"
-      >
+      <div class="bg-light flex-fill menu-list text-secondary">
         <div class="service mt-3">
           <small *ngIf="!isHideTabLeft" class="text-secondary mx-3 fw-bold"
             >Dịch vụ
