@@ -13,8 +13,10 @@
         class="cr p-3 row m-0 p-0 border-bottom border-light"
         role="button"
       >
-        <div class="col-9 px-2 text-hm fw-bold">
-          {{ received.Id }} - {{ received.name }}
+        <div class="col-9 px-2 fw-bold">
+          <i class="text-secondary fa-solid fa-money-bill-wheat"></i>
+          <span class="text-secondary">{{ received.Id }}</span> -
+          <span class="text-hm">{{ received.name }}</span>
         </div>
 
         <div
@@ -22,20 +24,20 @@
         >
           <span
             *ngIf="received.status == 0"
-            style="font-size: 8px"
+            style="font-size: 10px"
             class="fw-bold rounded text-white bg-danger ms-auto"
             >Quá hạn
           </span>
           <span
             *ngIf="received.status == 2"
-            style="font-size: 8px"
+            style="font-size: 10px"
             class="fw-bold rounded text-white bg-success ms-auto"
             >Thàng công
           </span>
           <span
             *ngIf="!received.status || received.status == 1"
-            style="font-size: 8px"
-            class="fw-bold rounded text-white bg-primary ms-auto"
+            style="font-size: 10px"
+            class="fw-bold rounded text-primary ms-auto"
             >Đang chờ</span
           >
           <button
