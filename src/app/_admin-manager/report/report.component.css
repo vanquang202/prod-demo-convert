@@ -1,0 +1,20 @@
+
+input{ 
+    border: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-size: 14px!important;
+    border-width: 1px;
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 0 12px;
+    height: 40px;
+    outline: 0;
+    width: 100%;
+    font-weight: 400!important;
+}
+input:focus{
+    border-style: none; 
+    border: unset;
+    background: none;
+    list-style: none;
+}
