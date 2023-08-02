@@ -27,58 +27,21 @@
         ></i>
       </div>
       <div class="bg-light flex-fill menu-list text-secondary">
-        <div class="service mt-3">
-          <small *ngIf="!isHideTabLeft" class="text-secondary mx-3 fw-bold"
-            >Dịch vụ
-          </small>
-          <!-- <small *ngIf="isHideTabLeft" class="mx-3 fw-bold"></small> -->
-          <p
-            title="Dịch vụ của tôi "
-            [routerLink]="['/mya/service']"
-            (click)="onClickRouterLink()"
-            routerLinkActive="active"
-            role="button"
-            class="py-3 px-3 fw-bold m-0 d-flex align-items-center"
-            [ngClass]="{ 'text-center': isHideTabLeft }"
-          >
-            <i class="fs-5 fa-solid fa-bars-progress"></i>
-            <span class="ms-3" *ngIf="!isHideTabLeft">Dịch vụ của tôi</span>
-          </p>
-        </div>
-
-        <div class="service mt-2">
-          <small *ngIf="!isHideTabLeft" class="text-secondary mx-3 fw-bold"
-            >Tài khoản
-          </small>
-          <!-- <small *ngIf="isHideTabLeft" class="mx-3 fw-bold text-center">
-          </small> -->
-          <p
-            [routerLink]="['/mya/received']"
-            (click)="onClickRouterLink()"
-            routerLinkActive="active"
-            title="Hóa đơn"
-            role="button"
-            class="py-3 px-3 fw-bold m-0 d-flex align-items-center"
-            [ngClass]="{ 'text-center': isHideTabLeft }"
-          >
-            <i class="fs-5 fa-solid fa-receipt"></i>
-            <span class="ms-3" *ngIf="!isHideTabLeft">Hóa đơn</span>
-          </p>
-          <p
-            [routerLink]="['/mya/history-convert']"
-            (click)="onClickRouterLink()"
-            routerLinkActive="active"
-            title="Lịch sử chuyển đổi "
-            role="button"
-            class="py-3 px-3 fw-bold m-0 d-flex align-items-center"
-            [ngClass]="{ 'text-center': isHideTabLeft }"
-          >
-            <i class="fs-5 fa-solid fa-clock-rotate-left"></i>
-            <span class="ms-3" *ngIf="!isHideTabLeft">Lịch sử chuyển đổi </span>
-          </p>
-        </div>
+        <p
+          title="Dashboard"
+          [routerLink]="['/admin-manager/dashboard']"
+          (click)="onClickRouterLink()"
+          routerLinkActive="active"
+          role="button"
+          class="py-3 px-3 fw-bold m-0 d-flex align-items-center"
+          [ngClass]="{ 'text-center': isHideTabLeft }"
+        >
+          <i class="fs-5 fa-solid fa-table-columns"></i>
+          <span class="ms-3" *ngIf="!isHideTabLeft">Dashboard</span>
+        </p>
       </div>
       <div class="mt-auto text-center">
+        <small class="text-hm">Admin manager </small>
         <small *ngIf="!isHideTabLeft" class="text-secondary">
           <div class="copyright">
             &copy; Copyright <strong><span>HMDIGI</span></strong

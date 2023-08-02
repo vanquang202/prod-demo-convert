@@ -1,14 +1,14 @@
-<section id="hero" class="d-flex align-items-center">
-  <div class="container">
-    <div class="page-title text-center">
-      <h1 class="text-hm">Lịch sử chuyển đổi</h1>
-      <p class="text-secondary">
-        Danh sách các file đã chuyển đổi , và các file chuyển đổi sẽ được lưu
-        trữ trong 24h
-      </p>
+<div class="head section-bg p-3">
+  <div class="container px-0">
+    <div class="d-flex align-items-center">
+      <h4 class="py-1 text-secondary fw-bold m-0">Lịch sử chuyển đổi</h4>
     </div>
+  </div>
+</div>
 
-    <div class="rounded border overflow-hidden">
+<div class="p-3">
+  <div class="container shadow-sm mt-2 bg-white rounded">
+    <div class="table bg-white">
       <ng-container *ngFor="let item of files; let i = index">
         <div class="data d-flex-center border-bottom p-3">
           <div class="row m-0 p-0 w-100">
@@ -70,15 +70,6 @@
           </div>
         </div>
       </ng-container>
-
-      <div class="bg-hm-500 py-3 text-center">
-        <span
-          role="button"
-          [routerLink]="['/']"
-          class="bg-white text-secondary px-2 py-1 rounded"
-          >Chuyển đổi tiếp <i class="fa-solid fa-arrows-rotate"></i
-        ></span>
-      </div>
     </div>
   </div>
-</section>
+</div>

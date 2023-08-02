@@ -18,6 +18,7 @@ import { CartModule } from './_cart/cart.module';
 import { AuthModule } from './_auth/auth.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyaModule } from './_mya/mya.module';
+import { AdminManagerModule } from './_admin-manager/admin-manager.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MyaModule } from './_mya/mya.module';
     HomeModule,
     AuthModule,
     CartModule,
-    MyaModule
+    MyaModule,
+    AdminManagerModule
   ],
   providers: [
 

@@ -9,7 +9,6 @@ import { SecurityComponent } from './security/security.component';
 import { FormatComponent } from './format/format.component';
 import { SupportComponent } from './support/support.component';
 import { PricingComponent } from './pricing/pricing.component';
-import { HistoryConvertComponent } from './history-convert/history-convert.component';
 
 const routes: Routes = [
   {
@@ -55,11 +54,6 @@ const routes: Routes = [
         path: "pricing",
         component: PricingComponent,
         data: { title: "Dịch vụ" }
-      },
-      {
-        path: "my-files",
-        component: HistoryConvertComponent,
-        data: { title: "File của tôi" }
       },
 
     ]

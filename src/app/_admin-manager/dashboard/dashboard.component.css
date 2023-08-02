@@ -1,0 +1,28 @@
+.das-one{
+    min-height: 10vh; 
+    overflow: hidden;
+} 
+
+.bg-one{
+    width: 70vh ;
+    height: 70vh;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: -15vh;
+    bottom: -10vh;
+}
+.bg-one::after{
+    content: "";
+    width: 70vh ;
+    height: 70vh;
+    border-radius: 50%;
+    background-color: var(--hm-500);
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: -10vh;
+    bottom: -3vh;
+}

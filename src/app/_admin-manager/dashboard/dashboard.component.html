@@ -1,0 +1,140 @@
+<div class="p-2">
+  <div class="p-1">
+    <div class="das-one position-relative rounded shadow-sm bg-white py-3 px-3">
+      <div style="z-index: 10" class="position-relative row m-0 p-0">
+        <div
+          class="col-xl-7 col-12 p-0 d-flex justify-content-center flex-column"
+        >
+          <h3 class="text-hm fw-bold">
+            Chào mừng trở lại, bảng điều khiển của bạn đã sẵn sàng!
+          </h3>
+          <p>
+            Bạn làm rất tốt, bảng điều khiển đơn vị liên kết của bạn đã sẵn sàng
+            hoạt động! Bạn có thể xem doanh số bán hàng, tạo liên kết, chuẩn bị
+            phiếu giảm giá và tải xuống báo cáo liên kết bằng bảng điều khiển
+            này.
+          </p>
+          <p>
+            <span class="bg-hm text-white fw-bold rounded shadow-sm py-2 px-3">
+              Bắt đầu <i class="ms-2 fa-solid fa-chevron-right"></i>
+            </span>
+          </p>
+        </div>
+
+        <div
+          class="col-xl-5 d-xl-flex d-none justify-content-center align-content-center"
+        >
+          <img
+            style="height: 100%"
+            src="https://sb-admin-pro-angular.startbootstrap.com/assets/img/illustrations/statistics.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="bg-one"></div>
+    </div>
+  </div>
+
+  <div class="das-two mt-2">
+    <div class="row m-0 p-0">
+      <div class="col-xl-3 p-1 col-6">
+        <div
+          class="border-4 shadow-sm p-3 col-12 bg-white rounded border-start border-danger"
+        >
+          <p class="m-0 fw-bold">Lợi nhuận</p>
+          <span><i class="text-success fa-solid fa-up-long"></i> 2.000$</span>
+        </div>
+      </div>
+      <div class="col-xl-3 p-1 col-6">
+        <div
+          class="border-4 shadow-sm p-3 col-12 bg-white rounded border-start border-primary"
+        >
+          <p class="m-0 fw-bold">Tỉ lệ sử dụng</p>
+          <span><i class="text-success fa-solid fa-up-long"></i> 20.000</span>
+        </div>
+      </div>
+      <div class="col-xl-3 p-1 col-6">
+        <div
+          class="border-4 shadow-sm p-3 col-12 bg-white rounded border-start border-warning"
+        >
+          <p class="m-0 fw-bold">OCR</p>
+          <span><i class="text-danger fa-solid fa-down-long"></i> 599.000</span>
+        </div>
+      </div>
+      <div class="col-xl-3 p-1 col-6">
+        <div
+          class="border-4 shadow-sm p-3 col-12 bg-white rounded border-start border-success"
+        >
+          <p class="m-0 fw-bold">Chuyển đổi file</p>
+          <span><i class="text-success fa-solid fa-up-long"></i> 199.9999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="das-three mt-1">
+    <div class="row m-0 p-0">
+      <div class="col-xl-4 p-1 col-12 align-items-stretch d-flex flex-column">
+        <div class="shadow-sm flex-fill bg-white overflow-hidden rounded">
+          <h5 class="p-3 text-secondary">Báo cáo liên kết</h5>
+          <div>
+            <p class="m-0 p-3 bg-white border-bottom d-flex align-items-center">
+              <i class="text-hm fa-solid fa-dollar-sign me-2"></i>
+              <span class="text-secondary">Báo cáo thu nhập</span>
+              <i class="ms-auto fa-solid fa-angle-right"></i>
+            </p>
+            <p class="m-0 p-3 bg-white border-bottom d-flex align-items-center">
+              <i class="text-hm fa-solid fa-dollar-sign me-2"></i>
+              <span class="text-secondary">Giá bán trung bình </span>
+              <i class="ms-auto fa-solid fa-angle-right"></i>
+            </p>
+            <p class="m-0 p-3 bg-white border-bottom d-flex align-items-center">
+              <i class="text-hm fa-solid fa-dollar-sign me-2"></i>
+              <span class="text-secondary"
+                >Tương tác ( sử dụng chuyển đổi , nhập , click )</span
+              >
+              <i class="ms-auto fa-solid fa-angle-right"></i>
+            </p>
+            <p class="m-0 p-3 bg-white border-bottom d-flex align-items-center">
+              <i class="text-hm fa-solid fa-dollar-sign me-2"></i>
+              <span class="text-secondary">Tỉ lệ chuyển đổi </span>
+              <i class="ms-auto fa-solid fa-angle-right"></i>
+            </p>
+            <p class="m-0 p-3 bg-white border-bottom d-flex align-items-center">
+              <i class="text-hm fa-solid fa-dollar-sign me-2"></i>
+              <span class="text-secondary">Tỉ lệ chuyển đổi PDF </span>
+              <i class="ms-auto fa-solid fa-angle-right"></i>
+            </p>
+            <p class="m-0 p-3 bg-white border-bottom d-flex align-items-center">
+              <i class="text-hm fa-solid fa-dollar-sign me-2"></i>
+              <span class="text-secondary">Tỉ lệ chuyển đổi OCR</span>
+              <i class="ms-auto fa-solid fa-angle-right"></i>
+            </p>
+          </div>
+        </div>
+        <div class="mt-2 shadow-sm bg-hm-500 rounded p-3">
+          <h5 class="text-secondary">Ngân sách</h5>
+          <span class="fw-bold fs-2 text-white">{{ 200000 | number }}$</span>
+          <span>/ năm</span>
+          <div class="w-100 bg-white rounded-pill" style="height: 15px">
+            <div
+              class="range d-flex justify-content-center align-items-center w-75 h-100 bg-hm rounded-pill"
+            >
+              <p class="m-0 fw-bold text-white">75%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8 p-1 col-12 align-items-stretch d-flex">
+        <div class="flex-fill shadow-sm bg-white rounded p-3">
+          <h5 class="text-secondary">Biểu đồ sử dụng dịch vụ</h5>
+          <img
+            style="width: 100%; height: 50vh"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

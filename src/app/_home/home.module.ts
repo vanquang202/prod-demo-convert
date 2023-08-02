@@ -12,8 +12,6 @@ import { SecurityComponent } from './security/security.component';
 import { SupportComponent } from './support/support.component';
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { ComponentsModule } from '../_components/components.module';
-import { HistoryConvertComponent } from './history-convert/history-convert.component';
-
 
 @NgModule({
   declarations: [
@@ -26,7 +24,6 @@ import { HistoryConvertComponent } from './history-convert/history-convert.compo
     SecurityComponent,
     SupportComponent,
     TrangChuComponent,
-    HistoryConvertComponent
   ],
   imports: [
     CommonModule,

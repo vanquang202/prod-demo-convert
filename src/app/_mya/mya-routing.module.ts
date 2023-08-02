@@ -4,12 +4,17 @@ import { MyaLayoutComponent } from './mya-layout/mya-layout.component';
 import { ServiceComponent } from './service/service.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ReceivedComponent } from './received/received.component';
+import { HistoryConvertComponent } from './history-convert/history-convert.component';
 
 const routes: Routes = [
   {
     path: "mya",
     component: MyaLayoutComponent,
     children: [
+      {
+        path: "history-convert",
+        component: HistoryConvertComponent,
+      },
       {
         path: "service",
         component: ServiceComponent,
