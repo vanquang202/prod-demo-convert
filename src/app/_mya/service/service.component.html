@@ -29,14 +29,19 @@
         class="cr p-3 row m-0 p-0 border-bottom border-light"
         role="button"
       >
-        <div class="col-xl-3 px-2 col-12 text-hm fw-bold">
-          {{ service.name }}
+        <div class="col-xl-3 px-2 col-12 fw-bold">
+          <small class="p-0 fw-bold text-secondary">Dịch vụ:</small>
+          <span class="text-hm">{{ service.name }}</span>
         </div>
-        <div class="col-xl-3 px-2 col-12 text-warning">
-          {{ service.price | number }} VND
+        <div class="col-xl-3 px-2 col-12">
+          <small class="p-0 fw-bold text-secondary">Chi phí:</small>
+          <span class="text-warning">{{ service.price | number }} VND</span>
         </div>
-        <div class="col-xl-2 px-2 col-12 text-secondary">
-          Chu kì : {{ service.typePayment | number }}m
+        <div class="col-xl-2 px-2 col-12">
+          <small class="p-0 fw-bold text-secondary">Chu kì:</small>
+          <span class="text-secondary"
+            >{{ service.typePayment | number }}m</span
+          >
         </div>
         <!-- <small
             style="font-size: 10px; user-select: none"
@@ -46,12 +51,17 @@
         <div class="col-xl-4 px-2 col-12 text-success d-flex flex-wrap">
           <small
             style="font-size: 10px; user-select: none"
-            class="bg-success me-2 fw-bold px-2 py-1 rounded flex-fill text-white d-flex align-items-center justify-content-center"
+            class="me-2 fw-bold px-0 py-1 rounded text-success d-flex align-items-center justify-content-center"
             ><i class="fa-solid fa-circle me-2"></i> Đang sử dụng
           </small>
           <!-- <small
             style="font-size: 10px; user-select: none"
-            class="bg-danger flex-fill me-2 fw-bold px-2 py-1 rounded text-white d-flex align-items-center justify-content-center"
+            class="me-2 fw-bold px-0 py-1 rounded text-secondary d-flex align-items-center justify-content-center"
+            ><i class="fa-solid fa-circle me-2"></i> Đang chờ xử lý
+          </small> -->
+          <!-- <small
+            style="font-size: 10px; user-select: none"
+            class="me-2 px-0 fw-bold py-1 rounded text-danger d-flex align-items-center justify-content-center"
             ><i class="fa-solid fa-circle me-2"></i> Đã hết hạn
           </small> -->
           <button
